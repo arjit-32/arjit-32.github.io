@@ -1,4 +1,4 @@
-logoText = "Zzo"
+logoText = "Arjit"
 logoType = "short" # long, short
 description = "The Zzo theme for Hugo example site."
 custom_css = []
@@ -8,10 +8,10 @@ meta_image = ""
 themecolor = ""
 
 themeOptions = ["dark", "light", "hacker", "solarized", "kimbie"]
-notAllowedTypesInHome = ["contact", "talks", "about", "showcase", "publication", "presentation", "resume"]
-notAllowedTypesInHomeSidebar = ["about", "archive", "showcase", "publication", "presentation", "resume"]
-notAllowedTypesInArchive = ["about", "talks", "showcase", "publication", "presentation", "resume"]
-notAllowedTypesInHomeFeed = ["about", "archive", "contact", "talks", "showcase", "publication", "presentation", "resume", "gallery"]
+notAllowedTypesInHome = ["contact", "about", "archive"]
+notAllowedTypesInHomeSidebar = ["about", "archive", "contact"]
+notAllowedTypesInArchive = ["about", "contact"]
+notAllowedTypesInHomeFeed = ["about", "archive", "contact"]
 
 viewportSize = "normal" # widest, wider, wide, normal, narrow
 enableUiAnimation = true
@@ -20,19 +20,19 @@ enablePinnedPosts = true
 minItemsToShowInTagCloud = 1 # Minimum items to show in tag cloud
 
 # header
-homeHeaderType = "text" # text, img, slide, typewriter
+homeHeaderType = "slide" # text, img, slide, typewriter
 
 # menu
 showMobileMenuTerms = ["tags", "categories", "series"]
 
 # body
-enableBreadcrumb = true
+enableBreadcrumb = false
 enablePhotoSwipe = true
 enableSearch = true
 enableSearchHighlight = true
 enableGoToTop = true
 enableWhoami = true
-summaryShape = "classic" # card, classic, compact
+summaryShape = "compact" # card, classic, compact
 searchResultPosition = "main" # side, main
 archiveGroupByDate = "2006" # "2006-01": group by month, "2006": group by year
 archivePaginate = 13
@@ -42,14 +42,14 @@ talksGroupByDate = "2006"
 pubPaginate = 20
 
 # whoami
-myname = "zzossig"
-email = "zzossig@gmail.com"
-whoami = "Web Developer"
+myname = "Arjit Sharma"
+email = "arjitsharma50@gmail.com"
+whoami = "Computer Science Student"
 bioImageUrl = ""
 useGravatar = false
-location = "Seoul, Korea"
-organization = "Hugo"
-link = "https://zzossig.io/ko"
+location = "Dehradun, India"
+organization = "DIT University"
+link = "https://arjits1.github.io/portfolio"
 
 # sidebar
 enableBio = true
@@ -58,12 +58,12 @@ enableSidebar = true
 enableSidebarTags = true
 enableSidebarSeries = true
 enableSidebarCategories = true
-enableHomeSidebarTitles = true
+enableHomeSidebarTitles = false
 enableListSidebarTitles = true
 enableToc = true
 hideToc = false
-tocFolding = true
-tocPosition = "inner" # inner, outer
+tocFolding = false
+tocPosition = "outer" # inner, outer
 enableTocSwitch = true
 itemsPerCategory = 5
 sidebarPosition = "right"
@@ -71,10 +71,10 @@ tocLevels = ["h2", "h3", "h4"]
 enableSidebarPostsByOrder = false
 
 # footer
-showPoweredBy = true
+showPoweredBy = false
 showFeedLinks = true
-showSocialLinks = true
-enableLangChange = true
+showSocialLinks = false
+enableLangChange = false
 enableThemeChange = true
 
 # service
@@ -143,18 +143,18 @@ commento = false
   dataAttrs = "" # "data-isso='https://isso.example.com' data-isso-require-author='true'"
 
 [socialOptions]
-  email = "mailto:your@email.com"
+  email = "mailto:arjitsharma50@gmail.com"
   phone = ""
-  facebook = "http://example.org/"
-  twitter = "http://example.org/"
-  github = "https://github.com/zzossig/hugo-theme-zzo"
+  facebook = "https://www.facebook.com/arjit.sharma.142892"
+  twitter = "https://twitter.com/arjitsharma32"
+  github = "https://github.com/ArjitS1"
   stack-overflow = ""
-  instagram = ""
+  instagram = "https://www.instagram.com/____arjit____/"
   google-plus = ""
-  youtube = ""
+  youtube = "https://www.youtube.com/channel/UCO5SuP0bTi1lYQkVpJpYSCw?view_as=subscriber"
   medium = ""
   tumblr = ""
-  linkedin = ""
+  linkedin = "https://www.linkedin.com/in/arjit-sharma-0348b0151/"
   pinterest = ""
   stack-exchange = ""
   telegram = ""
@@ -183,10 +183,8 @@ commento = false
 
 # possible share name: ["facebook","twitter", "reddit", "linkedin", "tumblr", "weibo", "douban", "line"]
 [[share]]
-  name = "facebook"
-  username = ""
-[[share]]
   name = "twitter"
+
 
 [[footerLinks]]
   name = ""
