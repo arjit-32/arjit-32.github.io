@@ -5,10 +5,10 @@ header:
       - typeString: Hello world!
       - pauseFor: 2500
       - deleteAll: true
-      - typeString: Strings can be removed
+      - typeString: I am Arjit Sharma
       - pauseFor: 2500
-      - deleteChars: 7
-      - typeString: <strong>altered!</strong>
+      - deleteChars: 12
+      - typeString: <strong>CS Student</strong>
       - pauseFor: 2500
     options:
       loop: true
@@ -17,7 +17,7 @@ header:
     paddingX: 50
     align: center
     fontSize: 44
-    fontColor: yellow
+    fontColor: white
     
   - type: text
     height: 200
