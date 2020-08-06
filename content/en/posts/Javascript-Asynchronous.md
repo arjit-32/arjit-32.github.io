@@ -12,7 +12,7 @@ tags:
 - Web-Development
 - Javascript
 series:
-- random
+- 
 categories:
 - Web-Development
 ---

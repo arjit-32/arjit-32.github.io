@@ -25,9 +25,9 @@ header:
     paddingY: 0
     align: center
     title:
-      - HUGO
+      - Arjit Sharma's Blog
     subtitle:
-      - The world’s fastest framework for building websites
+      - Let curiosity lead the way 
     titleColor: 
     titleShadow: true
     titleFontSize: 44
