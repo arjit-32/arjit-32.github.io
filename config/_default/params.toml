@@ -92,7 +92,7 @@ fullContents = false
 
 # comment
 enableComment = true
-disqus_shortname = ""
+disqus_shortname = "arjit-sharma"
 commento = false
 
 [telegram]
