@@ -1,6 +1,6 @@
 logoText = "Arjit"
 logoType = "short" # long, short
-description = "The Zzo theme for Hugo example site."
+description = "Arjit Sharma's blog website.Here content related to computer science,coding,databases,machine learning,web development and etc will be posted."
 custom_css = []
 custom_js = []
 useFaviconGenerator = true # https://www.favicon-generator.org/
@@ -151,7 +151,7 @@ commento = false
   stack-overflow = ""
   instagram = "https://www.instagram.com/____arjit____/"
   google-plus = ""
-  youtube = "https://www.youtube.com/channel/UCO5SuP0bTi1lYQkVpJpYSCw?view_as=subscriber"
+  youtube = ""
   medium = ""
   tumblr = ""
   linkedin = "https://www.linkedin.com/in/arjit-sharma-0348b0151/"
