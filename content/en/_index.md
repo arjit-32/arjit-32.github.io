@@ -25,7 +25,7 @@ header:
     paddingY: 0
     align: center
     title:
-      - Arjit Sharma's Blog
+      - Helzo Ninja
     subtitle:
       - Let curiosity lead the way 
     titleColor: 
