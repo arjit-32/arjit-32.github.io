@@ -25,9 +25,9 @@ header:
     paddingY: 0
     align: center
     title:
-      - Helzo Ninja
+      - Helzo World!
     subtitle:
-      - Let curiosity lead the way 
+      - This website is all about CS related articles. Also other random stuff. 
     titleColor: 
     titleShadow: true
     titleFontSize: 44
@@ -76,9 +76,9 @@ header:
         imageRepeat: no-repeat
         imagePosition: center
         title:
-          - header title1
+          - Core CS
         subtitle:
-          - header subtitle1
+          - Checkout DS
         titleFontSize: 44
         subtitleFontSize: 16
         spaceBetweenTitleSubtitle: 20

@@ -1,4 +1,4 @@
-logoText = "HN"
+logoText = "Home"
 logoType = "short" # long, short
 description = "Arjit Sharma's blog website.Here content related to computer science,coding,databases,machine learning,web development and etc will be posted."
 custom_css = []
@@ -43,8 +43,8 @@ pubPaginate = 20
 
 # whoami
 myname = "Arjit Sharma"
-email = "arjitsharma50@gmail.com"
-whoami = "Computer Science Student"
+email = "arjitsharma32@gmail.com"
+whoami = "Yo, I am a CS enthusiast or am I ? Just kidding."
 bioImageUrl = ""
 useGravatar = false
 location = "Dehradun, India"
