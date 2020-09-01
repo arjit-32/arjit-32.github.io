@@ -1,6 +1,6 @@
 ---
 title: "Dependency Injection in PHP"
-date: 2020-08-05T22:05:10+05:30
+date: 2020-09-01T22:05:10+05:30
 draft: false
 description: "When our class needs object of other class it is called dependency injection"
 draft: false

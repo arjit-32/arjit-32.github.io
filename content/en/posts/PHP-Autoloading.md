@@ -1,6 +1,6 @@
 ---
 title: "Autoloading in PHP"
-date: 2020-08-05T22:05:10+05:30
+date: 2020-09-01T22:05:10+05:30
 draft: false
 description: "Autoloader is a strategy for finding PHP class or interface and loading it at run time when a class is instantiated. Better than writing multiple require and include as they do not scale well and is a clutter"
 draft: false

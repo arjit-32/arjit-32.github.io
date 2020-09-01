@@ -1,6 +1,6 @@
 ---
 title: "Asynchronous Javascript"
-date: 2020-08-06T17:50:12+05:30
+date: 2020-09-01T17:50:12+05:30
 draft: false
 description: "What is Asynchronous Javascript | AJAX | Callbacks | Promises | Async/Await | Fetch API"
 draft: false

@@ -1,6 +1,6 @@
 ---
 title: "PDO in PHP"
-date: 2020-08-05T22:05:10+05:30
+date: 2020-09-01T22:05:10+05:30
 draft: false
 description: "PDO stands for PHP Data Objects. It is PHP extension to access database."
 draft: false

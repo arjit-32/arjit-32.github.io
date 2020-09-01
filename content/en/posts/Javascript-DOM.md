@@ -1,6 +1,6 @@
 ---
 title: "Javascript DOM Manipulation"
-date: 2020-08-06T22:05:10+05:30
+date: 2020-09-01T22:05:10+05:30
 draft: false
 description: " What is Document Object Model in Javascript | How to manipulate content on the website "
 draft: false

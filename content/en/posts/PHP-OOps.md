@@ -1,6 +1,6 @@
 ---
 title: "Object Oriented PHP"
-date: 2020-08-05T22:05:10+05:30
+date: 2020-09-01T22:05:10+05:30
 draft: false
 description: "Classes and Objects in PHP | Getters and Setters | Traits | Interfaces"
 draft: false

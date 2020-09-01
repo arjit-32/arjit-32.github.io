@@ -1,6 +1,6 @@
 ---
 title: "Javascript-ES6"
-date: 2020-08-06T22:05:10+05:30
+date: 2020-09-01T22:05:10+05:30
 draft: false
 description: "Classes in Javacript | Object Oriented JS | ES6 | Inheritance | Arrow Function"
 draft: false

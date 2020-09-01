@@ -1,6 +1,6 @@
 ---
 title: "Javascript Basics"
-date: 2020-08-06T22:05:10+05:30
+date: 2020-09-01T22:05:10+05:30
 draft: false
 description: " What is Javscript | Practical implementation of Javascript "
 draft: false

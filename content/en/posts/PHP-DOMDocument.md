@@ -1,6 +1,6 @@
 ---
 title: "DOMDocument Class in PHP"
-date: 2020-08-05T22:05:10+05:30
+date: 2020-09-01T22:05:10+05:30
 draft: false
 description: "We can use DOMDOcument class in PHP to create and get HTML content dynamically"
 draft: false

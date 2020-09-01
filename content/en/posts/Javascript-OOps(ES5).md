@@ -1,6 +1,6 @@
 ---
 title: "Object Oriented JS(in ES5)"
-date: 2020-08-06T22:05:10+05:30
+date: 2020-09-01T22:05:10+05:30
 draft: false
 description: "Object Oriented Javacript | ES5 | Prototypes "
 draft: false
