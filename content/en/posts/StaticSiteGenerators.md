@@ -3,7 +3,7 @@ title: "What are Static Site Generators"
 date: 2020-09-01T17:50:12+05:30
 draft: true
 description: "Static site generator (SSG) bridges the gap between static HTML sites and CMS based sites(like wordpress). It provides better performance of static sites and we do not have to write HTML for content of our site."
-draft: true
+draft: false
 author: Arjit Sharma
 authorEmoji: 🤖
 pinned: false
