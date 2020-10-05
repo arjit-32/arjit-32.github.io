@@ -14,7 +14,7 @@ tags:
 series:
 - 
 categories:
-- Web-Development
+- 
 ---
 
 Represents an entire HTML or XML document. It serves as the root of the document tree. Helps in parsing and creating xml,html

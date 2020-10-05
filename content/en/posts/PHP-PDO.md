@@ -14,7 +14,7 @@ tags:
 series:
 - 
 categories:
-- Web-Development
+- 
 ---
 
 PDO stands for PHP Data Objects (Object Oriented). It is a PHP Extension to access database.Unlike mysqli it works with multiple databases. There are 3 main Classes are :

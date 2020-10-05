@@ -13,7 +13,7 @@ tags:
 series:
 - Static Site Generator
 categories:
-- Web-Development
+- 
 ---
 
 ## Introduction

@@ -14,7 +14,7 @@ tags:
 series:
 - Data Structures & Algorithms
 categories:
-- Core CS
+- 
 ---
 
 # Time complexity of **Divide and Conquer Algorithms -**

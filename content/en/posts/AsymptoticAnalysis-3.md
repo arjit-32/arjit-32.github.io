@@ -14,7 +14,7 @@ tags:
 series:
 - Data Structures & Algorithms
 categories:
-- Core CS
+- 
 ---
 # Practise problems on Asymptotic Analysis
 

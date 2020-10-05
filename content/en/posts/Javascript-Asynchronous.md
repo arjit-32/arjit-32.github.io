@@ -14,7 +14,7 @@ tags:
 series:
 - 
 categories:
-- Web-Development
+- 
 ---
 
 Synchronous code works in an order. `1st thing then 2nd` while in asynchronous , `while doing 1st thing do 2nd`. Most Async code comes from an API or library
