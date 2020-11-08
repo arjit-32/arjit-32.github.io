@@ -11,7 +11,7 @@ image:
 tags:
 - Web-Development
 series:
-- Static Site Generator
+- 
 categories:
 - 
 ---

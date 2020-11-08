@@ -10,9 +10,9 @@ image:
 libraries:
 - 
 tags:
-- algo
+- 
 series:
-- coding
+- 
 categories:
 - 
 ---
