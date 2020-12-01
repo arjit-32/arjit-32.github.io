@@ -5,7 +5,7 @@ description: "mskdskmvdkmskd"
 draft: true
 author: Arjit Sharma
 authorEmoji: 🤖
-pinned: true
+pinned: false
 image: images/whoami/avatar.jpg
 libraries:
 - mathjax
