@@ -59,12 +59,12 @@ class Main{
 		}
 
 		int global_max,temp_sum;  //global_max stores max among all subarray
-		global_max=temp_sum=ar[0]; //temp_sum keeps tracks of contiguous subarray sum, If reaches below 0 reset
+		global_max=temp_sum=0; //temp_sum keeps tracks of contiguous subarray sum, If reaches below 0 reset
 
-		for(int i=1;i<len;++i){
+		for(int i=0;i<len;++i){
 			temp_sum+=ar[i];
-			if(global_max<temp_sum) global_max=temp_sum;
 			if(temp_sum<0) temp_sum=0;
+			if(global_max<temp_sum) global_max=temp_sum;
 		}
 		//Printing
 		System.out.print(global_max);
