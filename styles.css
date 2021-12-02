@@ -39,9 +39,7 @@ a:hover{
 .container{
     width: 50%;
 }
-.calendar  span{
-    color: white;
-}
+
 @media only screen and (max-width: 600px) {
     .container{
         margin : 10px 0px 0px 0px;
