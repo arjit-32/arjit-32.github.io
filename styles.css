@@ -38,6 +38,7 @@ a:hover{
 
 .container{
     width: 50%;
+    background-color: rgba(29, 31, 33, 0.9);
 }
 
 @media only screen and (max-width: 600px) {
