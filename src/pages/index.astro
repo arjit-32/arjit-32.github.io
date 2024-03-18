@@ -1,0 +1,249 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Card from "../components/Card.astro";
+import Heading from "../components/Heading.astro";
+import CustomImageScroll from "../components/CustomImageScroll.astro";
+import CTA from "../components/CTA.astro";
+import Contact from "../components/Contact.astro";
+
+//Professional Work Components
+import Anaren from "../components/Anaren.astro";
+//Project Components
+import Python from "../components/Python.astro";
+---
+
+<Layout title="Web Developer Portfolio">
+  <div id="contents">
+    <main class="container">
+      <div class="mb-16">
+        <Heading />
+        <p
+          class="mt-4 text-lg text-zinc-500 dark:text-zinc-400 font-light lg:text-xl"
+        >
+          Hello visitor, I am Arjit, a Software Developer based out of Bengaluru, India. I am an engineer and a creative dev, as in I like 
+          to create aesthetically pleasing softwares. Apart from my work, I like to Workout, Run Marathons, Write Poems, 
+          Review Movies and Animes and learn anything and everything. Here's a blog devoted to my alter ego <a
+            target="_blank"
+            href="https://cooperative-frown-88b.notion.site/Arjit-Did-What-96925d0718ae4c1088d1acc7ecb3a61d"
+            class="underline text-gray-300">arjitdidwhat</a>.
+        </p>
+      </div>
+      <div class="mb-16">
+        <h2
+          class="text-3xl mt-6 font-medium lg:text-4xl tracking-tight text-primary dark:text-white"
+        >
+          Tech Blog - Turing Tribe
+        </h2>
+        <p class="mt-4 text-lg text-zinc-500 dark:text-zinc-400">
+         I love to learn and tech new things on various tech fields, mainly being Web Development, System Design, Problem Solving and Core Computer Science Subjects
+         A medium for me to teach these things effectively was to write blogs and make videos. I make videos on 
+          <a
+            href="https://www.youtube.com/@TuringTribe"
+            target="_blank"
+            class="underline text-gray-300">YouTube</a
+          > and write on almost every platform.
+        </p>
+        <CustomImageScroll />
+      </div>
+
+      <h2
+        class="text-3xl mt-6 font-medium lg:text-4xl tracking-tight text-primary dark:text-white mb-2"
+      >
+       Professional Work
+      </h2>
+      <div class="mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="">
+          <Card
+            href="https://canalys.com/"
+            title="Canalys.com"
+            body="Public website for the tech research firm Canalys. Its main purpose was to give brand identity, lead generation and to provide the latest research reports and insights to the users."
+            tags="Drupal, PHP, JavaScript, CSS, HTML"
+          >
+            <!-- <div class="max-w-full">
+              <Anaren />
+            </div> -->
+          </Card>
+        </div>
+        <div class="">
+          <Card
+            href="https://candefero.com/"
+            title="Candefero"
+            body="Candefero is a channel's community, which provides market reports to IT channel partners in exchange of their feedbacks. To IT Vendors it provides a platform to get feedbacks from their channel partners."
+            tags="Drupal, PHP, JavaScript, CSS, HTML"
+          >
+            <!-- <div class="max-w-full">
+              <Anaren />
+            </div> -->
+          </Card>
+        </div>
+        <div class="">
+          <Card
+            title="Internal Websites for Canalys"
+            body="Worked on various internal websites for Canalys, which were used for purposes like managing the data, events, research reports, marketing campaigns."
+            tags="Drupal, PHP, JavaScript, CSS, HTML"
+          >
+            <!-- <div class="max-w-full">
+              <Anaren />
+            </div> -->
+          </Card>
+        </div>
+      </div>
+      <div class="my-8 bg-black">
+        <CTA />
+      </div>
+      <h2
+        class="text-3xl mt-6 font-medium lg:text-4xl tracking-tight text-primary dark:text-white mb-2"
+      >
+        Personal Projects
+      </h2>
+      <div class="mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="">
+          <Card
+            title="Coming Soon"
+            body=""
+            tags=""
+            github=""
+          >
+            <Python />
+          </Card>
+        </div>
+      </div>
+
+      <h2
+      class="text-3xl mt-6 font-medium lg:text-4xl tracking-tight text-primary dark:text-white mb-2"
+    >
+      Tools and Technologies
+    </h2>
+    <div class="relative overflow-hidden shadow-md rounded-lg">
+      <table class="table-fixed w-full text-left">
+          <thead class="text-gray-200 uppercase bg-gray-500">
+              <tr>
+                  <td class="py-3 border text-center font-bold p-4" contenteditable="true">Category</td>
+                  <td class="py-3 border text-center font-bold p-4" contenteditable="true">Tools and Technologies</td>
+              </tr>
+          </thead>
+          <tbody class="bg-white text-gray-500">
+              <tr class="py-3">
+                  <td class="py-3 border text-center  p-4" contenteditable="true">Front-end Web</td>
+                  <td class="py-3 border text-center  p-4" contenteditable="true">HTML5, CSS3, Javascript, React JS</td>
+              </tr>
+              <tr class="py-3">
+                <td class="py-3 border text-center  p-4" contenteditable="true">Back-end Web</td>
+                <td class="py-3 border text-center  p-4" contenteditable="true">Node Js, Express, PHP</td>
+            </tr>
+            <tr class="py-3">
+              <td class="py-3 border text-center  p-4" contenteditable="true">Languages</td>
+              <td class="py-3 border text-center  p-4" contenteditable="true">Java, Javascript, Python</td>
+          </tr>
+          <tr class="py-3">
+            <td class="py-3 border text-center  p-4" contenteditable="true">Databases</td>
+            <td class="py-3 border text-center  p-4" contenteditable="true">MongoDb, MySQL</td>
+        </tr>
+          </tbody>
+      </table>
+  </div>
+
+
+      <div class="my-8">
+        <Contact />
+      </div>
+    </main>
+  </div>
+</Layout>
+
+<style is:global>
+  main {
+    margin: auto;
+    padding: 0.75rem;
+    width: 1100px;
+    max-width: 100%;
+    color: white;
+    line-height: 1.6;
+  }
+  .project-image {
+    max-width: 100% !important;
+    overflow: hidden;
+  }
+  .project-cards {
+  }
+  .video-wrapper {
+    background: #111111;
+    padding: calc(1.5rem - 1px);
+    line-height: 1.4;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  .project-column > div {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .projects-alt > li {
+    gap: 1rem !important;
+  }
+  .astro-a {
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    transform: translatex(-50%);
+    width: 220px;
+    height: auto;
+    z-index: -1;
+  }
+
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+    font-size: 2.75rem;
+  }
+  .instructions {
+    margin-bottom: 2rem;
+    border: 1px solid rgba(var(--accent-light), 25%);
+    background: linear-gradient(
+      rgba(var(--accent-dark), 66%),
+      rgba(var(--accent-dark), 33%)
+    );
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  .instructions code {
+    font-size: 0.8em;
+    font-weight: bold;
+    background: rgba(var(--accent-light), 12%);
+    color: rgb(var(--accent-light));
+    border-radius: 4px;
+    padding: 0.3em 0.4em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent-light));
+  }
+  .link-card-grid {
+    display: grid;
+    gap: 0;
+    padding: 0;
+  }
+  .read-more {
+    color: #fff;
+  }
+  details {
+    position: relative;
+    top: -1px;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0 0 8px 8px;
+    max-width: 900px;
+  }
+  details > div {
+    max-width: 830px;
+  }
+
+  summary:hover {
+    cursor: pointer;
+  }
+</style>
+
+<script></script>
