@@ -14,13 +14,21 @@ const titleSeparator = '•'
 const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 const socialImageURL = new URL(ogImage ? ogImage : '/social-card.png', Astro.url).href
----
 
+const GA_TRACKING_ID = 'G-HS0T8J3NHK';
+const scriptContent = `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '${GA_TRACKING_ID}');
+`;
+---
 <meta charset='utf-8' />
 <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 <meta content='IE=edge' http-equiv='X-UA-Compatible' />
 <title>{siteTitle}</title>
-
+<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}></script>
+<script set:html={scriptContent}></script>
 {/* Icons / Favicon */}
 <!-- <link href="favicon/favicon.ico" rel="icon" sizes="any" />
 <link href="favicon/icon.svg" rel="icon" type="image/svg+xml" />
