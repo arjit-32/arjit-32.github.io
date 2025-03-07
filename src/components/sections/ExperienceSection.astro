@@ -1,6 +1,11 @@
 ---
 import Section from '../Section.astro';
 import Card from '../Card.astro';
+import { Image } from 'astro:assets';
+import cetpaLogo from '@/assets/cetpa.png';
+import bitsgreetLogo from '@/assets/bitsgreet.png';
+import cognizantLogo from '@/assets/cognizant.png';
+import canalysLogo from '@/assets/canalys.png';
 ---
 
 <section id="experience" class="py-24 w-full">
@@ -30,7 +35,7 @@ import Card from '../Card.astro';
             
             <!-- CETPA Logo -->
             <div class="absolute top-12 left-[60%] w-14 h-14 rounded-full bg-white p-1 shadow-sm cursor-pointer hover:scale-110 transition-transform logo-icon" data-experience="cetpa">
-              <img src="/src/assets/cetpa.png" alt="CETPA" class="w-full h-full object-contain" />
+              <Image src={cetpaLogo} alt="CETPA" width={56} height={56} class="w-full h-full object-contain" />
             </div>
             
             <!-- CETPA Label -->
@@ -43,7 +48,7 @@ import Card from '../Card.astro';
             
             <!-- Bitsgreet Logo -->
             <div class="absolute top-28 left-[81%] w-14 h-14 rounded-full bg-white p-1 shadow-sm cursor-pointer hover:scale-110 transition-transform logo-icon" data-experience="bitsgreet">
-              <img src="/src/assets/bitsgreet.png" alt="Bitsgreet" class="w-full h-full object-contain" />
+              <Image src={bitsgreetLogo} alt="Bitsgreet" width={56} height={56} class="w-full h-full object-contain" />
             </div>
             
             <!-- Bitsgreet Label -->
@@ -59,7 +64,7 @@ import Card from '../Card.astro';
             
             <!-- Cognizant Logo - Centered for entire Cognizant period -->
             <div class="absolute -top-12 left-[65%] w-14 h-14 rounded-full bg-white p-1 shadow-sm cursor-pointer hover:scale-110 transition-transform logo-icon" data-experience="cognizant-intern">
-              <img src="/src/assets/cognizant.png" alt="Cognizant" class="w-full h-full object-contain" />
+              <Image src={cognizantLogo} alt="Cognizant" width={56} height={56} class="w-full h-full object-contain" />
             </div>
             
             <!-- Cognizant Label -->
@@ -74,7 +79,7 @@ import Card from '../Card.astro';
             
             <!-- Canalys Logo -->
             <div class="absolute -top-12 left-[90%] w-14 h-14 rounded-full bg-white p-1 shadow-sm cursor-pointer hover:scale-110 transition-transform logo-icon" data-experience="canalys">
-              <img src="/src/assets/canalys.png" alt="Canalys" class="w-full h-full object-contain" />
+              <Image src={canalysLogo} alt="Canalys" width={56} height={56} class="w-full h-full object-contain" />
             </div>
             
             <!-- Canalys Label -->
