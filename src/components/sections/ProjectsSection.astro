@@ -1,6 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import Section from '../Section.astro';
+import highlightHeroImage from '@/assets/highlight-hero.jpg';
+import comingSoonImage from '@/assets/coming-soon.png';
 
 // Sample project data
 const projects = [
@@ -8,21 +10,21 @@ const projects = [
     title: "Highlight Hero",
     description: "A tool for beautifying code examples in blogs and Ed-tech websites.",
     techStack: ["JavaScript", "NodeJS"],
-    image: "/src/assets/highlight-hero.jpg",
+    image: highlightHeroImage,
     link: "https://github.com/arjit-32/highlight-hero"
   },
   {
     title: "Canalys Website",
     description: "Companies' public website.",
     techStack: ["Javascript", "CSS", "NodeJs", "AWS"],
-    image: "/src/assets/coming-soon.png",
+    image: comingSoonImage,
     link: "https://canalys.com/"
   },
   {
     title: "Candefero Website",
     description: "Social media for channel partners.",
     techStack: ["PHP", "AWS", "CSS", "UI/UX Design"],
-    image: "/src/assets/coming-soon.png",
+    image: comingSoonImage,
     link: "https://candefero.com/"
   },
   
