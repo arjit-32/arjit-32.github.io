@@ -1,35 +1,118 @@
 ---
-import type { SiteMeta } from '@/types'
-
 import BaseHead from '@/components/BaseHead.astro'
 import Footer from '@/components/layout/Footer.astro'
 import Header from '@/components/layout/Header.astro'
 import ThemeProvider from '@/components/ThemeProvider.astro'
-
 import { siteConfig } from '@/site-config'
 
 interface Props {
-	meta: SiteMeta
+	title?: string;
+	description?: string;
+	ogImage?: string;
+	articleDate?: Date;
 }
 
 const {
-	meta: { articleDate, description = siteConfig.description, ogImage, title }
-} = Astro.props
+	title = siteConfig.title,
+	description = siteConfig.description,
+	ogImage,
+	articleDate
+} = Astro.props;
 ---
 
-<html lang={siteConfig.lang} class=''>
+<html lang={siteConfig.lang} class="scroll-smooth">
 	<head>
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 	</head>
 
-	<body class='flex justify-center bg-background'>
+	<body class="flex justify-center bg-background font-sans">
 		<ThemeProvider />
-		<main
-			class='flex min-h-screen w-screen max-w-[60rem] flex-col items-center px-6 pb-10 pt-7 font-satoshi text-[0.92rem] leading-relaxed sm:px-10 lg:px-10'
-		>
+		<div class="flex min-h-screen w-full flex-col">
 			<Header />
-			<slot />
+			<main class="flex-1 w-full max-w-7xl mx-auto">
+				<slot />
+			</main>
 			<Footer />
-		</main>
+		</div>
+		
+		<!-- Cursor follower effect -->
+		<div id="cursor-follower" class="fixed w-8 h-8 rounded-full pointer-events-none opacity-0 z-50 transition-opacity duration-300 bg-primary/20 blur-sm"></div>
+		
+		<script>
+			// Cursor follower effect
+			document.addEventListener('DOMContentLoaded', () => {
+				const follower = document.getElementById('cursor-follower');
+				if (!follower) return;
+				
+				// Show follower when mouse enters the document
+				document.addEventListener('mouseenter', () => {
+					follower.style.opacity = '1';
+				});
+				
+				// Hide follower when mouse leaves the document
+				document.addEventListener('mouseleave', () => {
+					follower.style.opacity = '0';
+				});
+				
+				// Update follower position on mouse move
+				document.addEventListener('mousemove', (e) => {
+					const { clientX, clientY } = e;
+					
+					// Calculate position to center the follower on the cursor
+					const x = clientX - follower.offsetWidth / 2;
+					const y = clientY - follower.offsetHeight / 2;
+					
+					// Apply position with smooth transition
+					follower.style.transform = `translate(${x}px, ${y}px)`;
+				});
+				
+				// Scale effect on interactive elements
+				const interactiveElements = document.querySelectorAll('a, button, .project-card, .tech-card, .care-card');
+				
+				interactiveElements.forEach(element => {
+					element.addEventListener('mouseenter', () => {
+						follower.style.transform += ' scale(2.5)';
+						follower.style.opacity = '0.8';
+					});
+					
+					element.addEventListener('mouseleave', () => {
+						follower.style.transform = follower.style.transform.replace(' scale(2.5)', '');
+						follower.style.opacity = '1';
+					});
+				});
+			});
+		</script>
 	</body>
 </html>
+
+<style is:global>
+	:root {
+		--font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+	}
+	
+	html {
+		font-family: var(--font-sans);
+	}
+	
+	/* Smooth scrolling */
+	html {
+		scroll-behavior: smooth;
+	}
+	
+	/* Hide scrollbar but keep functionality */
+	body::-webkit-scrollbar {
+		width: 8px;
+	}
+	
+	body::-webkit-scrollbar-track {
+		background: transparent;
+	}
+	
+	body::-webkit-scrollbar-thumb {
+		background-color: rgba(156, 163, 175, 0.5);
+		border-radius: 20px;
+	}
+</style>

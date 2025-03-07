@@ -1,0 +1,439 @@
+---
+import Section from '../Section.astro';
+import Card from '../Card.astro';
+---
+
+<section id="experience" class="py-24 w-full">
+  <Section title="Experience">
+    <div class="relative mt-16 mb-24 px-4">
+      <!-- Minimalist Timeline -->
+      <div class="relative w-full">
+        <!-- Timeline Base (2017-Present) -->
+        <div class="w-full h-6 flex">
+          <!-- BTech Period (2017-2021) - 4 years - ~48% -->
+          <div class="relative w-[44.6%] h-full" data-experience="btech">
+            <!-- Main BTech segment -->
+            <div class="w-full h-6 bg-blue-500/20 rounded-l segment-bar"></div>
+            
+            <!-- BTech Logo -->
+            <div class="absolute -top-12 left-[20%] w-14 h-14 rounded-full bg-blue-500/10 border-2 border-blue-500/30 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform logo-icon" data-experience="btech">
+              <span class="text-sm font-bold text-blue-500">BTech</span>
+            </div>
+            
+            <!-- BTech Label -->
+            <div class="absolute -top-[65px] left-[20%] text-xs text-muted-foreground text-center">
+              <span class="font-medium">Computer Science</span>
+            </div>
+            
+            <!-- CETPA (May-July 2019) - 2 months - ~4% of BTech -->
+            <div class="relative top-10 left-[56%] w-[4%] h-6 bg-blue-500/20 cursor-pointer transition-colors border-t-2 border-b-2 border-blue-500/30 segment-bar" data-experience="cetpa"></div>
+            
+            <!-- CETPA Logo -->
+            <div class="absolute top-12 left-[60%] w-14 h-14 rounded-full bg-white p-1 shadow-sm cursor-pointer hover:scale-110 transition-transform logo-icon" data-experience="cetpa">
+              <img src="/src/assets/cetpa.png" alt="CETPA" class="w-full h-full object-contain" />
+            </div>
+            
+            <!-- CETPA Label -->
+            <div class="absolute top-24 left-[55%] text-xs text-muted-foreground text-center">
+              <span class="font-medium">Intern</span>
+            </div>
+            
+            <!-- Bitsgreet (May 2019-May 2020) - 1 year - ~25% of BTech -->
+            <div class="relative top-20 left-[56%] w-[25%] h-6 bg-blue-500/10 border-blue-500/30 cursor-pointer transition-colors border-t-2 border-b-2 segment-bar" data-experience="bitsgreet"></div>
+            
+            <!-- Bitsgreet Logo -->
+            <div class="absolute top-28 left-[81%] w-14 h-14 rounded-full bg-white p-1 shadow-sm cursor-pointer hover:scale-110 transition-transform logo-icon" data-experience="bitsgreet">
+              <img src="/src/assets/bitsgreet.png" alt="Bitsgreet" class="w-full h-full object-contain" />
+            </div>
+            
+            <!-- Bitsgreet Label -->
+            <div class="absolute top-44 left-[80%] text-xs text-muted-foreground text-center">
+              <span class="font-medium">Co-Founder</span>
+            </div>
+          </div>
+          
+          <!-- Cognizant Period (Feb 2021-Dec 2021) - 11 months - ~12% -->
+          <div class="relative w-[11%] h-full" data-experience="cognizant-intern">
+            <!-- Cognizant segment -->
+            <div class="w-full h-6 bg-yellow-500/30 cursor-pointer hover:bg-yellow-500/40 transition-colors segment-bar"></div>
+            
+            <!-- Cognizant Logo - Centered for entire Cognizant period -->
+            <div class="absolute -top-12 left-[65%] w-14 h-14 rounded-full bg-white p-1 shadow-sm cursor-pointer hover:scale-110 transition-transform logo-icon" data-experience="cognizant-intern">
+              <img src="/src/assets/cognizant.png" alt="Cognizant" class="w-full h-full object-contain" />
+            </div>
+            
+            <!-- Cognizant Label -->
+            <div class="absolute -top-[65px] left-[65%] text-xs text-muted-foreground text-center">
+              <span class="font-medium">Developer</span>
+            </div>
+          </div>
+          
+          <!-- Canalys Period (Jan 2022-Beyond) - 3+ years - ~40% -->
+          <div class="relative w-[36%] h-full" data-experience="canalys">
+            <div class="w-full h-6 bg-emerald-500/30 rounded-r cursor-pointer hover:bg-emerald-500/40 transition-colors segment-bar"></div>
+            
+            <!-- Canalys Logo -->
+            <div class="absolute -top-12 left-[90%] w-14 h-14 rounded-full bg-white p-1 shadow-sm cursor-pointer hover:scale-110 transition-transform logo-icon" data-experience="canalys">
+              <img src="/src/assets/canalys.png" alt="Canalys" class="w-full h-full object-contain" />
+            </div>
+            
+            <!-- Canalys Label -->
+            <div class="absolute -top-[65px] left-[85%] text-xs text-muted-foreground text-center whitespace-nowrap">
+              <span class="font-medium">Software Engineer</span>
+            </div>
+          </div>
+        </div>
+        
+      <!-- Year Markers - Line Indicators -->
+<div class="absolute top-8 left-0 right-0">
+  <div class="h-3 w-px bg-muted-foreground/30 absolute left-0"></div>
+  <div class="h-3 w-px bg-muted-foreground/30 absolute left-[11.1%]"></div>
+  <div class="h-3 w-px bg-muted-foreground/30 absolute left-[22.2%]"></div>
+  <div class="h-3 w-px bg-muted-foreground/30 absolute left-[33.3%]"></div>
+  <div class="h-3 w-px bg-muted-foreground/30 absolute left-[44.4%]"></div>
+  <div class="h-3 w-px bg-muted-foreground/30 absolute left-[55.5%]"></div>
+  <div class="h-3 w-px bg-muted-foreground/30 absolute left-[66.6%]"></div>
+  <div class="h-3 w-px bg-muted-foreground/30 absolute left-[77.7%]"></div>
+  <div class="h-3 w-px bg-muted-foreground/30 absolute left-[88.8%]"></div>
+  <div class="h-3 w-px bg-muted-foreground/30 absolute right-0"></div>
+</div>
+
+<!-- Year Markers - Labels -->
+<div class="absolute top-12 left-0 right-0">
+  <div class="relative w-full h-6 text-xs text-muted-foreground">
+    <div class="absolute left-0 transform -translate-x-1/2 text-center">2017</div>
+    <div class="absolute left-[11.1%] transform -translate-x-1/2 text-center">2018</div>
+    <div class="absolute left-[22.2%] transform -translate-x-1/2 text-center">2019</div>
+    <div class="absolute left-[33.3%] transform -translate-x-1/2 text-center">2020</div>
+    <div class="absolute left-[44.4%] transform -translate-x-1/2 text-center">2021</div>
+    <div class="absolute left-[55.5%] transform -translate-x-1/2 text-center">2022</div>
+    <div class="absolute left-[66.6%] transform -translate-x-1/2 text-center">2023</div>
+    <div class="absolute left-[77.7%] transform -translate-x-1/2 text-center">2024</div>
+    <div class="absolute left-[88.8%] transform -translate-x-1/2 text-center">2025</div>
+    <div class="absolute right-0 transform translate-x-1/2 text-center">2026</div>
+  </div>
+</div>
+
+      </div>
+      
+      <!-- Controls - Moved below timeline -->
+      <div class="flex justify-center mt-52 mb-8">
+        <button id="play-pause-btn" class="px-4 py-2 rounded-md bg-primary/20 text-primary hover:bg-primary/30 transition-colors focus:outline-none">
+          <span class="play-icon hidden">▶ Auto Play</span>
+          <span class="pause-icon">⏸️ Pause</span>
+        </button>
+      </div>
+      
+      <!-- Details Cards Container -->
+      <div id="experience-details" class="relative mt-8 hidden">
+        <!-- Canalys Details -->
+        <div id="canalys-details" class="details-card hidden w-full max-w-2xl mx-auto bg-card rounded-xl border border-border shadow-lg p-4">
+          <Card 
+            heading="Canalys"
+            subheading="Software Engineer"
+            date="Jan 2022 - Present"
+          >
+            <ul class="ml-4 list-disc text-muted-foreground">
+              <li>Developed a social media newsfeed, increasing community engagement by 35% in 6 months through content aggregation.</li>
+              <li>Implemented gamified survey system, boosting user participation by 63% with a point-based incentive structure.</li>
+              <li>Automated vendor benchmarking, streamlining insights collection for 50+ global vendors.</li>
+              <li>Led the UI/UX redesign of public websites, improving accessibility and enhancing the user experience.</li>
+              <li>Enhanced CRM targeting through advanced user segmentation, increasing marketing engagement and precision.</li>
+              <li>Replaced legacy Excel-based workflows with automated data pipelines, improving efficiency for analysts.</li>
+            </ul>
+          </Card>
+        </div>
+        
+    
+        
+        <!-- Cognizant Intern Details -->
+        <div id="cognizant-intern-details" class="details-card hidden w-full max-w-2xl mx-auto bg-card rounded-xl border border-border shadow-lg p-4">
+          <Card
+            heading="Cognizant"
+            subheading="Intern & Programmer Analyst"
+            date="Feb 2021 - Dec 2021 (11 mos)"
+          >
+            <ul class="ml-4 list-disc text-muted-foreground">
+              <li>Identified and optimized service bottlenecks, reducing ticket resolution time in a key enterprise dashboard.</li>
+              <li>Enhanced the service management dashboard with UI updates, ensuring a smoother UI experience.</li>
+              <li>Designed and developed an internal marketplace application using HTML5, CSS3, Bootstrap, Java & Spring Boot.</li>
+            </ul>
+          </Card>
+        </div>
+        
+        <!-- Bitsgreet Details -->
+        <div id="bitsgreet-details" class="details-card hidden w-full max-w-2xl mx-auto bg-card rounded-xl border border-border shadow-lg p-4">
+          <Card
+            heading="Bitsgreet"
+            subheading="Co-Founder"
+            date="May 2019 - May 2020 (1 year)"
+          >
+            <ul class="ml-4 list-disc text-muted-foreground">
+              <li>Registered the company under Ministry of Corporate Affairs, and secured DIT University Startup Incubation.</li>
+              <li>Built and launched an e-commerce platform for custom cakes & flowers, handling UI/UX and frontend development.</li>
+              <li>Gained hands-on experience in business strategy, product development, and digital marketing to drive customer acquisition.</li>
+            </ul>
+          </Card>
+        </div>
+        
+        <!-- Cetpa Details -->
+        <div id="cetpa-details" class="details-card hidden w-full max-w-2xl mx-auto bg-card rounded-xl border border-border shadow-lg p-4">
+          <Card
+            heading="Cetpa"
+            subheading="Intern"
+            date="May 2019 - July 2019 (3 mos)"
+          >
+            <ul class="ml-4 list-disc text-muted-foreground">
+              <li>Completed an intense Java development training, focusing on object oriented programming and data structures.</li>
+              <li>Built multiple Java-based applications, gained hands-on experience in UI/UX</li>
+            </ul>
+          </Card>
+        </div>
+        
+        <!-- BTech Details -->
+        <div id="btech-details" class="details-card hidden w-full max-w-2xl mx-auto bg-card rounded-xl border border-border shadow-lg p-4">
+          <Card
+            heading="Bachelor of Technology"
+            subheading="Computer Science and Engineering"
+            date="2017 - 2021"
+          >
+            <ul class="ml-4 list-disc text-muted-foreground">
+              <li>Grade - 8.03/10</li>
+              <li>Counselling Team: Involved in activities and events to promote mental health awareness in college. </li>
+              <li>Volunteer for International Conference on Applied Mathematics and Computation Science (2K19)</li>
+              <li>Fine Arts Team: Involved in College Fests, art presented in Lámour Exhibition</li>
+              <li>Courses - Compiler Design(A+), Computer Networks(A), Algorithms(A), Databases(A), Java(A)</li>
+            </ul>
+          </Card>
+        </div>
+      </div>
+    </div>
+  </Section>
+</section>
+
+<style>
+  .details-card {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .details-card.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Highlight styles for each experience */
+  [data-experience="btech"].highlight-pulse,
+  [data-experience="btech"].highlight-pulse div {
+    background-color: rgba(59, 130, 246, 0.4); /* Darker blue */
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 5px 0 rgba(59, 130, 246, 0.3);
+  }
+  
+  [data-experience="cetpa"].highlight-pulse,
+  [data-experience="cetpa"].highlight-pulse div {
+    background-color: rgba(217, 119, 6, 0.5); /* Darker amber */
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 5px 0 rgba(217, 119, 6, 0.3);
+  }
+  
+  [data-experience="bitsgreet"].highlight-pulse,
+  [data-experience="bitsgreet"].highlight-pulse div {
+    background-color: rgba(124, 58, 237, 0.5); /* Darker purple */
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 5px 0 rgba(124, 58, 237, 0.3);
+  }
+  
+  [data-experience="cognizant-intern"].highlight-pulse,
+  [data-experience="cognizant-intern"].highlight-pulse div {
+    background-color: rgba(234, 179, 8, 0.5); /* Darker yellow */
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 5px 0 rgba(234, 179, 8, 0.3);
+  }
+  
+  [data-experience="canalys"].highlight-pulse,
+  [data-experience="canalys"].highlight-pulse div {
+    background-color: rgba(16, 185, 129, 0.5); /* Darker emerald */
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 5px 0 rgba(16, 185, 129, 0.3);
+  }
+  
+  /* Icon throb animation for highlighted sections */
+  .logo-icon[data-experience].highlight-pulse {
+    animation: icon-throb 2s ease-in-out infinite;
+  }
+  
+  /* Segment throb animation */
+  [data-experience].highlight-pulse .segment-bar {
+    animation: segment-throb 2s ease-in-out infinite;
+  }
+  
+  @keyframes icon-throb {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  @keyframes segment-throb {
+    0%, 100% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(1.1);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const timelineSegments = document.querySelectorAll('[data-experience]');
+    const detailsContainer = document.getElementById('experience-details');
+    const detailsCards = document.querySelectorAll('.details-card');
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const playIcon = document.querySelector('.play-icon');
+    const pauseIcon = document.querySelector('.pause-icon');
+    const logoIcons = document.querySelectorAll('.logo-icon');
+    
+    // Create map of experience types to their detail cards
+    const experienceCards = {
+      'btech': document.getElementById('btech-details'),
+      'cetpa': document.getElementById('cetpa-details'),
+      'bitsgreet': document.getElementById('bitsgreet-details'),
+      'cognizant-intern': document.getElementById('cognizant-intern-details'),
+      'canalys': document.getElementById('canalys-details')
+    };
+    
+    // Convert to array for cycling through
+    const experienceOrder = [
+      'btech',
+      'cetpa',
+      'bitsgreet',
+      'cognizant-intern',
+      'canalys'
+    ];
+    
+    let isPlaying = false;
+    let currentIndex = 0;
+    let autoPlayInterval;
+    
+    // Function to show a specific experience
+    function showExperience(experienceType) {
+      // Show the details container
+      detailsContainer.classList.remove('hidden');
+      
+      // Get the target card
+      const targetCard = experienceCards[experienceType];
+      
+      // Remove highlight from all segments and icons
+      timelineSegments.forEach(s => {
+        s.classList.remove('highlight-pulse');
+      });
+      
+      // Add highlight to segments with matching experience type
+      timelineSegments.forEach(s => {
+        if (s.getAttribute('data-experience') === experienceType) {
+          s.classList.add('highlight-pulse');
+        }
+      });
+      
+      // Hide all other cards
+      detailsCards.forEach((card) => {
+        if (card !== targetCard) {
+          card.classList.remove('active');
+          card.classList.add('hidden');
+        }
+      });
+      
+      // Show the target card with animation
+      if (targetCard) {
+        targetCard.classList.remove('hidden');
+        // Force a reflow
+        void targetCard.offsetWidth;
+        targetCard.classList.add('active');
+      }
+    }
+    
+    // Auto-play function
+    function startAutoPlay() {
+      isPlaying = true;
+      playIcon.classList.add('hidden');
+      pauseIcon.classList.remove('hidden');
+      
+      // Start with the first experience
+      showExperience(experienceOrder[currentIndex]);
+      
+      // Set interval to cycle through experiences
+      autoPlayInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % experienceOrder.length;
+        showExperience(experienceOrder[currentIndex]);
+      }, 5000); // Change experience every 5 seconds
+    }
+    
+    // Stop auto-play
+    function stopAutoPlay() {
+      isPlaying = false;
+      playIcon.classList.remove('hidden');
+      pauseIcon.classList.add('hidden');
+      
+      // Clear interval
+      clearInterval(autoPlayInterval);
+      
+      // Remove highlights
+      timelineSegments.forEach(s => {
+        s.classList.remove('highlight-pulse');
+      });
+    }
+    
+    // Handle manual clicks on timeline segments
+    timelineSegments.forEach((segment) => {
+      segment.addEventListener('click', () => {
+        // Stop auto-play if it's running
+        if (isPlaying) {
+          stopAutoPlay();
+        }
+        
+        const experienceType = segment.getAttribute('data-experience');
+        showExperience(experienceType);
+      });
+    });
+    
+    // Play/Pause button
+    playPauseBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        stopAutoPlay();
+      } else {
+        startAutoPlay();
+      }
+    });
+    
+    // Close details card when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('[data-experience]') && 
+          !e.target.closest('.details-card') && 
+          !e.target.closest('#play-pause-btn')) {
+        // Stop auto-play if it's running
+        if (isPlaying) {
+          stopAutoPlay();
+        }
+        
+        // Hide details
+        detailsCards.forEach(card => {
+          card.classList.remove('active');
+          setTimeout(() => {
+            card.classList.add('hidden');
+            detailsContainer.classList.add('hidden');
+          }, 300);
+        });
+      }
+    });
+    
+    // Start autoplay when the page loads
+    setTimeout(() => {
+      startAutoPlay();
+    }, 1000); // Slight delay to make sure everything is loaded
+  });
+</script> 

@@ -1,0 +1,395 @@
+---
+import Section from '../Section.astro';
+
+// Sample passions and values data
+const passionsValues = [
+  {
+    title: "Continuous Learning",
+    description: "I'm committed to lifelong learning and believe that growth comes from constantly challenging yourself to learn new things.",
+    icon: "📚"
+  },
+  {
+    title: "Clean Code",
+    description: "I value writing clean, maintainable code that follows best practices and is easy for others to understand and build upon.",
+    icon: "💻"
+  },
+  {
+    title: "User Experience",
+    description: "I believe that technology should be intuitive and accessible. Great UX is at the heart of every successful digital product.",
+    icon: "🎨"
+  },
+  {
+    title: "Work-Life Balance",
+    description: "I strive for a healthy balance between professional ambition and personal well-being, making time for both career growth and life outside of work.",
+    icon: "⚖️"
+  },
+  {
+    title: "Mentorship",
+    description: "I'm passionate about sharing knowledge and helping others grow in their development journey. I believe in paying knowledge forward.",
+    icon: "🤝"
+  },
+  {
+    title: "Problem Solving",
+    description: "I enjoy tackling complex problems and finding elegant solutions. The process of breaking down challenges energizes me.",
+    icon: "🧩"
+  }
+];
+
+// Slideshow images
+const slideshowImages = [
+  '/images/csprimer-1.png',
+  '/images/csprimer-2.png',
+  '/images/csprimer-3.png',
+  '/images/csprimer-4.png',
+  '/images/csprimer-5.png'
+];
+---
+<section id="things-i-care-about" class="py-24 w-full">
+  <Section title="Learning by Teaching">
+    <div class="grid lg:grid-cols-2 gap-12 items-start">
+      <!-- Left Panel: Content -->
+      <div class="space-y-8">
+        <div class="space-y-4">
+          <h3 class="text-3xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+            csprimer.in
+          </h3>
+          <p class="text-lg text-muted-foreground">
+            A personal technical blog where I learn by teaching. Through detailed articles and tutorials, I break down complex computer science concepts into digestible pieces, helping both myself and others understand the fundamentals better.
+          </p>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="feature-card p-4 rounded-lg bg-card/50 border border-border hover:border-primary/50 transition-all">
+            <div class="text-primary mb-2">📚</div>
+            <h4 class="font-medium">Deep Dives</h4>
+            <p class="text-sm text-muted-foreground">In-depth technical articles</p>
+          </div>
+          <div class="feature-card p-4 rounded-lg bg-card/50 border border-border hover:border-primary/50 transition-all">
+            <div class="text-primary mb-2">🎯</div>
+            <h4 class="font-medium">Hands-on</h4>
+            <p class="text-sm text-muted-foreground">Practical examples</p>
+          </div>
+          <div class="feature-card p-4 rounded-lg bg-card/50 border border-border hover:border-primary/50 transition-all">
+            <div class="text-primary mb-2">🚀</div>
+            <h4 class="font-medium">Interactive</h4>
+            <p class="text-sm text-muted-foreground">Live code snippets</p>
+          </div>
+          <div class="feature-card p-4 rounded-lg bg-card/50 border border-border hover:border-primary/50 transition-all">
+            <div class="text-primary mb-2">💡</div>
+            <h4 class="font-medium">Visual</h4>
+            <p class="text-sm text-muted-foreground">Clear explanations</p>
+          </div>
+        </div>
+
+        <!-- Visit Blog Button -->
+        <div class="relative">
+          <a 
+            href="https://csprimer.in" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="visit-button group inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium hover:bg-primary/90 transition-all transform hover:scale-105 hover:shadow-lg overflow-hidden"
+          >
+            <span class="relative z-10">Visit csprimer.in</span>
+            <svg 
+              class="relative z-10 transform group-hover:translate-x-1 transition-transform" 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="20" 
+              height="20" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              stroke-width="2" 
+              stroke-linecap="round" 
+              stroke-linejoin="round"
+            >
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+            <div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="absolute -right-8 top-1/2 -translate-y-1/2 w-16 h-16 bg-white/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Panel: Image Slideshow -->
+      <div class="relative space-y-8">
+        <!-- Slideshow Container -->
+        <div class="slideshow-container relative w-full h-[400px] rounded-xl overflow-hidden bg-card/50 border border-border transform hover:scale-[1.02] transition-transform duration-300">
+          {slideshowImages.map((image, index) => (
+            <img 
+              src={image} 
+              alt={`csprimer.in screenshot ${index + 1}`}
+              class={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ${index === 0 ? 'opacity-100' : 'opacity-0'}`}
+              data-index={index}
+            />
+          ))}
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity"></div>
+          
+          <!-- Navigation Arrows -->
+          <button 
+            class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/30 hover:bg-black/50 text-white flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110"
+            aria-label="Previous slide"
+          >
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="24" 
+              height="24" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              stroke-width="2" 
+              stroke-linecap="round" 
+              stroke-linejoin="round"
+            >
+              <path d="m15 18-6-6 6-6"/>
+            </svg>
+          </button>
+          <button 
+            class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/30 hover:bg-black/50 text-white flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110"
+            aria-label="Next slide"
+          >
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="24" 
+              height="24" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              stroke-width="2" 
+              stroke-linecap="round" 
+              stroke-linejoin="round"
+            >
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+          </button>
+          
+          <!-- Navigation Dots -->
+          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+            {slideshowImages.map((_, index) => (
+              <button 
+                class={`w-2 h-2 rounded-full transition-all duration-300 ${index === 0 ? 'bg-white w-4' : 'bg-white/50'}`}
+                data-index={index}
+                aria-label={`Go to slide ${index + 1}`}
+              ></button>
+            ))}
+          </div>
+        </div>
+
+        <!-- Feynman Quote -->
+        <div class="py-6 px-6 bg-card/50 border border-border rounded-xl relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
+          <div class="relative z-10">
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="30" 
+              height="30" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              stroke-width="1" 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              class="text-primary/30 mb-4"
+            >
+              <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+              <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+            </svg>
+            
+            <p class="text-xl font-medium leading-relaxed mb-4 quote-text">
+              What I cannot build, I do not understand.
+            </p>
+            
+            <p class="text-right font-medium text-sm">— Richard Feynman</p>
+          </div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-xl"></div>
+        <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-primary/5 rounded-full blur-xl"></div>
+      </div>
+    </div>
+  </Section>
+</section>
+
+<style>
+  .feature-card {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .quote-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .quote-text.animate {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .visit-button {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .visit-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: 0.5s;
+  }
+
+  .visit-button:hover::before {
+    left: 100%;
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  
+  gsap.registerPlugin(ScrollTrigger);
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    // Animate feature cards
+    const featureCards = document.querySelectorAll('.feature-card');
+    gsap.fromTo(
+      featureCards,
+      { 
+        y: 20, 
+        opacity: 0 
+      },
+      { 
+        y: 0, 
+        opacity: 1, 
+        stagger: 0.1,
+        duration: 0.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".feature-card",
+          start: "top 80%"
+        }
+      }
+    );
+    
+    // Animate quote
+    gsap.fromTo(
+      '.quote-text',
+      { 
+        y: 20, 
+        opacity: 0 
+      },
+      { 
+        y: 0, 
+        opacity: 1, 
+        duration: 1,
+        delay: 0.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".quote-text",
+          start: "top 80%"
+        }
+      }
+    );
+
+    // Slideshow functionality
+    const images = document.querySelectorAll('.slideshow-container img');
+    const dots = document.querySelectorAll('.slideshow-container button[data-index]');
+    const prevButton = document.querySelector('.slideshow-container button[aria-label="Previous slide"]');
+    const nextButton = document.querySelector('.slideshow-container button[aria-label="Next slide"]');
+    let currentIndex = 0;
+    let intervalId: number | null = null;
+
+    function showSlide(index: number) {
+      // Update images
+      images.forEach((img, i) => {
+        img.classList.toggle('opacity-100', i === index);
+        img.classList.toggle('opacity-0', i !== index);
+      });
+
+      // Update dots
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('bg-white', i === index);
+        dot.classList.toggle('bg-white/50', i !== index);
+        dot.classList.toggle('w-4', i === index);
+        dot.classList.toggle('w-2', i !== index);
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showSlide(currentIndex);
+    }
+
+    function startSlideshow() {
+      if (intervalId) clearInterval(intervalId);
+      intervalId = window.setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    }
+
+    function stopSlideshow() {
+      if (intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
+    }
+
+    // Add click handlers to dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentIndex = index;
+        showSlide(currentIndex);
+        startSlideshow();
+      });
+    });
+
+    // Add click handlers to arrow buttons
+    if (prevButton) {
+      prevButton.addEventListener('click', () => {
+        prevSlide();
+        startSlideshow();
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener('click', () => {
+        nextSlide();
+        startSlideshow();
+      });
+    }
+
+    // Start slideshow
+    startSlideshow();
+
+    // Pause on hover
+    const container = document.querySelector('.slideshow-container');
+    if (container) {
+      container.addEventListener('mouseenter', stopSlideshow);
+      container.addEventListener('mouseleave', startSlideshow);
+    }
+  });
+</script> 

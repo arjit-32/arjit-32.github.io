@@ -1,0 +1,329 @@
+---
+import { Image } from 'astro:assets';
+import profileImage from '../../assets/arjit.png';
+// Import tech logos
+import reactLogo from '../../assets/logos/react.svg';
+import awsLogo from '../../assets/logos/aws.svg';
+import figmaLogo from '../../assets/logos/figma.svg';
+import typescriptLogo from '../../assets/logos/typescript.svg';
+import nodejsLogo from '../../assets/logos/nodejs.svg';
+import githubLogo from '../../assets/logos/github.svg';
+---
+
+<div id="inception-grid" class="fixed inset-0 -z-10 pointer-events-none">
+  <canvas id="gridCanvas" class="w-full h-full"></canvas>
+</div>
+
+<section id="hero" class="relative h-screen flex flex-col justify-center items-center overflow-hidden">
+  <div class="z-10 flex flex-col items-center gap-6 text-center px-4 sm:px-6">
+    <!-- Profile Image with Animation -->
+    <div class="profile-image-container relative">
+      <Image
+        src={profileImage}
+        alt="Arjit Sharma Profile"
+        width={200}
+        height={200}
+        class="rounded-full border-4 border-primary shadow-lg profile-image"
+      />
+      <!-- Reduced shadow intensity -->
+      <div class="profile-glow absolute inset-0 rounded-full blur-xl opacity-10 bg-primary"></div>
+      
+      <!-- Tech logos floating around -->
+      <div class="tech-logo-container">
+        <Image src={reactLogo} alt="React" width={80} height={80} class="tech-logo tech-logo-1" />
+        <Image src={awsLogo} alt="AWS" width={40} height={40} class="tech-logo tech-logo-2" />
+        <Image src={figmaLogo} alt="Figma" width={30} height={30} class="tech-logo tech-logo-3" />
+        <Image src={typescriptLogo} alt="TypeScript" width={40} height={40} class="tech-logo tech-logo-4" />
+        <Image src={nodejsLogo} alt="Node.js" width={40} height={40} class="tech-logo tech-logo-5" />
+      </div>
+    </div>
+    
+    <!-- Name and Title with Static Information -->
+    <div class="text-content">
+      <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-balance">
+        <span class="">Arjit Sharma</span>
+      </h1>
+      <h2 class="mt-4 text-2xl sm:text-3xl text-muted-foreground">
+        <span>Software Developer | Bengaluru | 3+ Years</span>
+      </h2>
+    </div>
+    
+    <!-- Call to action button -->
+    <div class="mt-8 flex flex-col sm:flex-row gap-4">
+      <a href="#projects" class="px-8 py-3 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium transition-colors text-lg">
+        View My Work
+      </a>
+      <a href="#about" class="px-8 py-3 rounded-full bg-transparent border border-primary hover:bg-primary/10 text-primary font-medium transition-colors text-lg">
+        About Me
+      </a>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 animate-bounce">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70">
+        <path d="M12 5v14"></path>
+        <path d="m19 12-7 7-7-7"></path>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<style>
+  .gradient-text {
+    background: linear-gradient(90deg, #4F46E5 0%, #9333EA 50%, #EC4899 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+    animation: shine 5s linear infinite;
+  }
+  
+  @keyframes shine {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+  
+  .profile-image {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .profile-glow {
+    animation: pulse 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0.1;
+      transform: scale(0.95);
+    }
+    50% {
+      opacity: 0.2;
+      transform: scale(1.05);
+    }
+    100% {
+      opacity: 0.1;
+      transform: scale(0.95);
+    }
+  }
+
+  /* Tech logos positioning and animation */
+  .tech-logo-container {
+    position: absolute;
+    inset: -150px;
+    z-index: -1;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  .tech-logo {
+    position: absolute;
+    filter: drop-shadow(0 0 5px rgba(79, 70, 229, 0.4));
+    transform-style: preserve-3d;
+  }
+
+  @keyframes floatLogo {
+    0% {
+      transform: translate3d(0, 0, 0) rotateY(0deg);
+    }
+    50% {
+      transform: translate3d(10px, -20px, 50px) rotateY(10deg);
+    }
+    100% {
+      transform: translate3d(0, 0, 0) rotateY(0deg);
+    }
+  }
+
+  .tech-logo-1 {
+    top: 30%;
+    left: -60px;
+    animation: floatLogo 8s ease-in-out infinite;
+  }
+
+  .tech-logo-2 {
+    top: 10%;
+    right: -50px;
+    animation: floatLogo 7s ease-in-out infinite 0.5s;
+  }
+
+  .tech-logo-3 {
+    bottom: 20%;
+    left: -40px;
+    animation: floatLogo 9s ease-in-out infinite 1s;
+  }
+
+  .tech-logo-4 {
+    bottom: 10%;
+    right: -60px;
+    animation: floatLogo 10s ease-in-out infinite 1.5s;
+  }
+
+  .tech-logo-5 {
+    top: -40px;
+    left: 40%;
+    animation: floatLogo 8.5s ease-in-out infinite 2s;
+  }
+
+  .tech-logo-6 {
+    bottom: -50px;
+    right: 40%;
+    animation: floatLogo 9.5s ease-in-out infinite 2.5s;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const canvas = document.getElementById('gridCanvas') as HTMLCanvasElement;
+    const ctx = canvas.getContext('2d')!;
+    
+    // Set canvas size and handle resize
+    function setCanvasSize() {
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      ctx.scale(dpr, dpr);
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+    }
+    setCanvasSize();
+    window.addEventListener('resize', setCanvasSize);
+
+    // Adjust grid properties based on screen size
+    const isMobile = window.innerWidth < 768;
+    const gridSize = isMobile ? 30 : 40;
+    const gridDensity = isMobile ? 15 : 20;
+    const perspective = isMobile ? 600 : 800;
+    
+    let targetRotationX = 0;
+    let targetRotationY = 0;
+    let currentRotationX = 0;
+    let currentRotationY = 0;
+    let lastScrollY = window.scrollY;
+    let scrollVelocity = 0;
+
+    // Track scroll position and calculate rotation
+    function updateScroll() {
+      const currentScrollY = window.scrollY;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollProgress = currentScrollY / maxScroll;
+      scrollVelocity = (currentScrollY - lastScrollY) * 0.1;
+      lastScrollY = currentScrollY;
+
+      // Create a wave-like motion based on scroll progress
+      const maxRotation = isMobile ? 15 : 25;
+      targetRotationX = Math.sin(scrollProgress * Math.PI * 2) * maxRotation;
+      targetRotationY = Math.cos(scrollProgress * Math.PI * 2) * maxRotation;
+
+      // Add velocity influence
+      targetRotationX += scrollVelocity;
+      targetRotationY += scrollVelocity * 0.5;
+    }
+
+    // Listen for scroll events
+    window.addEventListener('scroll', () => {
+      updateScroll();
+    }, { passive: true });
+
+    // Draw grid
+    function drawGrid() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Smooth rotation
+      const damping = isMobile ? 0.1 : 0.05;
+      currentRotationX += (targetRotationX - currentRotationX) * damping;
+      currentRotationY += (targetRotationY - currentRotationY) * damping;
+
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+      
+      // Draw grid
+      ctx.strokeStyle = 'rgba(79, 70, 229, 0.15)';
+      ctx.lineWidth = isMobile ? 0.5 : 1;
+      
+      // Draw grid points and lines
+      for (let x = -gridDensity; x <= gridDensity; x++) {
+        ctx.beginPath();
+        for (let z = -gridDensity; z <= gridDensity; z++) {
+          const point3D = {
+            x: x * gridSize,
+            y: 0,
+            z: z * gridSize
+          };
+          
+          const rotatedPoint = rotatePoint(point3D, currentRotationX, currentRotationY);
+          const point2D = project(rotatedPoint, perspective);
+          
+          if (point2D) {
+            const screenX = centerX + point2D.x;
+            const screenY = centerY + point2D.y;
+            
+            const opacity = Math.max(0, Math.min(1, 1 - (rotatedPoint.z + perspective) / (perspective * 2)));
+            const scrollIntensity = Math.min(Math.abs(scrollVelocity), 1);
+            
+            // Draw points with dynamic size and opacity
+            const pointSize = isMobile ? 1.5 : 2;
+            ctx.fillStyle = `rgba(79, 70, 229, ${opacity * (0.3 + scrollIntensity * 0.2)})`;
+            ctx.beginPath();
+            ctx.arc(screenX, screenY, pointSize * opacity * (1 + scrollIntensity * 0.3), 0, Math.PI * 2);
+            ctx.fill();
+            
+            if (z === -gridDensity) {
+              ctx.moveTo(screenX, screenY);
+            } else {
+              ctx.lineTo(screenX, screenY);
+            }
+          }
+        }
+        ctx.stroke();
+      }
+      
+      requestAnimationFrame(drawGrid);
+    }
+
+    // Helper functions
+    function rotatePoint(point: { x: number; y: number; z: number }, rotationX: number, rotationY: number) {
+      const rad = Math.PI / 180;
+      const cosX = Math.cos(rotationX * rad);
+      const sinX = Math.sin(rotationX * rad);
+      const cosY = Math.cos(rotationY * rad);
+      const sinY = Math.sin(rotationY * rad);
+      
+      return {
+        x: point.x * cosY - point.z * sinY,
+        y: point.y * cosX - (point.x * sinY + point.z * cosY) * sinX,
+        z: point.y * sinX + (point.x * sinY + point.z * cosY) * cosX
+      };
+    }
+
+    function project(point: { x: number; y: number; z: number }, perspective: number) {
+      const z = point.z + perspective;
+      if (z <= 0) return null;
+      
+      return {
+        x: point.x * (perspective / z),
+        y: point.y * (perspective / z)
+      };
+    }
+
+    // Initialize scroll position
+    updateScroll();
+    
+    // Start animation
+    drawGrid();
+  });
+</script> 

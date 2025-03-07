@@ -29,8 +29,24 @@ export const menuLinks: Array<{ title: string; path: string }> = [
 		path: '/'
 	},
 	{
-		title: 'Blog',
-		path: '/blog/'
+		title: 'Projects',
+		path: '/projects/'
+	},
+	{
+		title: 'About',
+		path: '/about/'
+	},
+	{
+		title: 'Experience',
+		path: '/experience/'
+	},
+	{
+		title: 'Technologies',
+		path: '/technologies/'
+	},
+	{
+		title: 'Things I Care About',
+		path: '/things-i-care-about/'
 	}
 ]
 
@@ -62,4 +78,36 @@ export const expressiveCodeOptions: AstroExpressiveCodeOptions = {
 		codeFontFamily:
 			'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;'
 	}
+}
+
+// Portfolio specific configuration
+export const portfolioConfig = {
+	// Core development technologies
+	coreTechnologies: [
+		{ name: 'JavaScript', icon: 'logos:javascript' },
+		{ name: 'React', icon: 'logos:react' },
+		{ name: 'Node.js', icon: 'logos:nodejs-icon' },
+		{ name: 'Express.js', icon: 'simple-icons:express' },
+		{ name: 'PostgreSQL', icon: 'logos:postgresql' },
+		{ name: 'MongoDB', icon: 'logos:mongodb-icon' }
+	],
+	// Technologies I'm familiar with
+	secondaryTechnologies: [
+		{ name: 'AWS', icon: 'simple-icons:amazonaws' },
+		{ name: 'Docker', icon: 'simple-icons:docker' },
+		{ name: 'GitHub', icon: 'simple-icons:github' },
+		{ name: 'NPM', icon: 'simple-icons:npm' },
+		{ name: 'Figma', icon: 'simple-icons:figma' },
+		{ name: 'ChatGPT', icon: 'simple-icons:openai' }
+	],
+	// Other technologies and interests
+	otherTechnologies: [
+		{ name: 'Java', icon: 'logos:java' },
+		{ name: 'Distributed Systems' },
+		{ name: 'System Design' },
+		{ name: 'Data Structures & Algorithms' },
+		{ name: 'Computer Networks' },
+		{ name: 'Operating Systems' },
+		{ name: 'Databases' }
+	]
 }

@@ -1,0 +1,179 @@
+---
+import Section from '../Section.astro';
+import { Icon } from 'astro-icon/components';
+import { portfolioConfig } from '@/site-config';
+
+const { coreTechnologies, secondaryTechnologies, otherTechnologies } = portfolioConfig;
+---
+
+<section id="technologies" class="py-24 w-full bg-muted/30">
+  <Section title="Technologies">
+    <div class="space-y-16">
+      <!-- Core Development Technologies -->
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold">Core Development Technologies</h3>
+        <p class="text-muted-foreground">These are the technologies I'm most proficient with and use regularly in my projects.</p>
+        
+        <div class="tech-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8">
+          {coreTechnologies.map((tech) => (
+            <div class="tech-card flex flex-col items-center justify-center p-6 bg-card rounded-xl border border-border hover:border-primary transition-all hover:shadow-lg hover:-translate-y-1">
+              <div class="tech-icon-container relative flex items-center justify-center w-16 h-16 mb-4">
+                <Icon name={tech.icon} class="tech-icon w-12 h-12" />
+                <div class="absolute inset-0 rounded-full bg-primary/10 blur-xl opacity-0 tech-glow"></div>
+              </div>
+              <span class="font-medium text-center">{tech.name}</span>
+            </div>
+          ))}
+        </div>
+
+        <!-- Technologies I'm Familiar With (inline with core technologies) -->
+        <div class="secondary-tech-grid grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+          {secondaryTechnologies.map((tech) => (
+            <div class="secondary-tech-card flex items-center gap-3 p-4 bg-card rounded-lg border border-border hover:border-primary/50 transition-all">
+              <Icon name={tech.icon} class="secondary-tech-icon w-6 h-6" />
+              <span class="font-medium">{tech.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Other Technologies -->
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold">Other Technologies</h3>
+        <p class="text-muted-foreground">Additional technologies and areas of expertise.</p>
+        
+        <div class="other-tech-grid grid grid-cols-1 md:grid-cols-6 gap-6">
+          <!-- Java Card (Large) -->
+          <div class="other-tech-card md:col-span-2 flex flex-col items-center justify-center p-6 bg-card rounded-xl border border-border hover:border-primary transition-all hover:shadow-lg hover:-translate-y-1">
+            <div class="tech-icon-container relative flex items-center justify-center w-16 h-16 mb-4">
+              <Icon name={otherTechnologies[0].icon} class="tech-icon w-12 h-12" />
+              <div class="absolute inset-0 rounded-full bg-primary/10 blur-xl opacity-0 tech-glow"></div>
+            </div>
+            <span class="font-medium text-center">{otherTechnologies[0].name}</span>
+          </div>
+
+          <!-- Other Items (Smaller Cards) -->
+          <div class="md:col-span-4 grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {otherTechnologies.slice(1).map((tech) => (
+              <div class="other-tech-card flex items-center gap-3 p-4 bg-card rounded-lg border border-border hover:border-primary/50 transition-all">
+                <span class="font-medium">{tech.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </Section>
+</section>
+
+<style>
+  .tech-card, .secondary-tech-card, .other-tech-card {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  
+  .tech-icon-container {
+    transition: transform 0.3s ease;
+  }
+  
+  .tech-card:hover .tech-icon-container {
+    transform: translateY(-5px);
+  }
+  
+  .tech-card:hover .tech-glow {
+    opacity: 0.5;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(1.2);
+    }
+    100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+  }
+</style>
+
+<script>
+  import * as THREE from 'three';
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  
+  gsap.registerPlugin(ScrollTrigger);
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    // Animate tech cards
+    const techCards = document.querySelectorAll('.tech-card');
+    gsap.fromTo(
+      techCards,
+      { 
+        opacity: 0, 
+        scale: 0.9 
+      },
+      { 
+        opacity: 1, 
+        scale: 1, 
+        stagger: 0.05, 
+        duration: 0.5,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: ".tech-grid",
+          start: "top 80%"
+        }
+      }
+    );
+    
+    // Animate secondary tech cards
+    const secondaryTechCards = document.querySelectorAll('.secondary-tech-card');
+    gsap.fromTo(
+      secondaryTechCards,
+      { 
+        opacity: 0, 
+        scale: 0.9 
+      },
+      { 
+        opacity: 1, 
+        scale: 1, 
+        stagger: 0.05, 
+        duration: 0.5,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: ".secondary-tech-grid",
+          start: "top 80%"
+        }
+      }
+    );
+
+    // Animate other tech cards
+    const otherTechCards = document.querySelectorAll('.other-tech-card');
+    gsap.fromTo(
+      otherTechCards,
+      { 
+        opacity: 0, 
+        scale: 0.9 
+      },
+      { 
+        opacity: 1, 
+        scale: 1, 
+        stagger: 0.05, 
+        duration: 0.5,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: ".other-tech-grid",
+          start: "top 80%"
+        }
+      }
+    );
+    
+  });
+  
+  
+</script> 
