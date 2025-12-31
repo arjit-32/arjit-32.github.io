@@ -2,6 +2,9 @@
 import { Image } from 'astro:assets';
 import Section from '../Section.astro';
 import highlightHeroImage from '@/assets/highlight-hero.jpg';
+import hindilang from '@/assets/hindilang.png';
+import voshi from '@/assets/voshi.png';
+import csprimer from '@/assets/csprimer.png'
 import comingSoonImage from '@/assets/coming-soon.png';
 
 
@@ -14,38 +17,24 @@ const projects = [
     link: "https://github.com/arjit-32/highlight-hero"
   },
   {
-    title: "Data Infinity UI Design",
-    description: "A Phone listing website design from sketches till final designs",
-    techStack: ["Figma", "UI/UX Design"],
-    image: comingSoonImage,
-    link: "https://www.figma.com/design/SdjD5Rphv35VIbFRlkNBE2/Data-Infinity?t=f4ApBIUCtSwBEgln-1"
+    title: "hindilang",
+    description: "Hindi-inspired scripting language that transpiles to JavaScript, built as an academic exercise to understand compilers and programming languages.",
+    techStack: ["nodejs", "compilers"],
+    image: hindilang,
+    link: "https://www.csprimer.in/articles/built-a-compiler"
   },
   {
-    title: "Canalys Website",
-    description: "Companies' public website.",
-    techStack: ["Javascript", "CSS", "NodeJs", "AWS"],
-    image: comingSoonImage,
-    link: "https://canalys.com/"
-  },
-  {
-    title: "Candefero Website",
-    description: "Social media for channel partners.",
-    techStack: ["PHP", "AWS", "CSS"],
-    image: comingSoonImage,
-    link: "https://candefero.com/"
-  },
-  {
-    title: "Candefero UI/UX Design",
-    description: "Worked on UI design for the candefero website",
-    techStack: ["Figma", "UI/UX Design"],
-    image: comingSoonImage,
-    link: "https://www.figma.com/design/lz6xZ4fAsED6daepBe7Jh6/Candefero-Redesign?m=auto&t=f4ApBIUCtSwBEgln-1"
-  },
+    title: "VOSHI",
+    description: "A lightweight, interactive shell with emoji-powered prompts, Git awareness, custom dashboard.",
+    techStack: ["C", "operating-systems"],
+    image: voshi,
+    link: "https://arjit-32.github.io/VOSHI/"
+  }
 ];
 ---
 
 <section id="projects" class="py-24 w-full">
-  <Section title="Projects">
+  <Section title="Personal Projects">
     <div class="flex flex-wrap gap-6 mt-8">
       {projects.map((project, index) => (
         <div 
