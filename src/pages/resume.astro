@@ -1,31 +1,40 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro'
 ---
-
 <BaseLayout title="Resume">
-	<div class="space-y-6">
-		<h1 class="text-3xl font-bold tracking-tight">Resume</h1>
-		<p class="text-muted-foreground">Download or view my resume.</p>
-		
-		<div class="mt-8 flex gap-4">
+	<div class="space-y-8">
+		<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+			<div>
+				<h1 class="text-3xl font-bold tracking-tight">Resume</h1>
+				<p class="text-muted-foreground">Contact me on Email or LinkedIn</p>
+				
+				<!-- Contact Links -->
+				<!-- Contact Links -->
+				<div class="flex flex-wrap gap-x-4 gap-y-2 mt-4 text-sm text-muted-foreground">
+					<a href="mailto:arjitsharma50@gmail.com" class="flex items-center gap-1.5 hover:text-primary transition-colors">
+						<span class="text-lg">✉️</span> arjitsharma50@gmail.com
+					</a>
+					<a href="https://linkedin.com/in/arjit-32" target="_blank" class="flex items-center gap-1.5 hover:text-primary transition-colors">
+						<span class="text-lg">👔</span> LinkedIn
+					</a>
+					<span class="flex items-center gap-1.5">
+						<span class="text-lg">📍</span> Bengaluru, India
+					</span>
+				</div>
+			</div>
+			
 			<a 
-				href="/CV-ArjitSharma-SDE.pdf" 
+				href="/CV_Arjit_SDE(5yoe).pdf" 
 				target="_blank" 
-				class="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90"
+				class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90"
 			>
 				Download PDF
 			</a>
-			<!-- <a 
-				href="/CV-ArjitSharma-SDE.pdf" 
-				class="inline-flex items-center justify-center rounded-md border border-input bg-transparent px-6 py-3 text-sm font-medium shadow-sm hover:bg-accent hover:text-accent-foreground"
-			>
-				View in Browser
-			</a> -->
 		</div>
 		
-		<div class="mt-10 border border-border rounded-lg p-4 bg-muted/20">
-			<p class="text-sm text-muted-foreground mb-4">Preview (First page only, download for full version):</p>
-			<iframe src="/CV-ArjitSharma-SDE.pdf" class="w-full h-[600px] rounded-md border border-border"></iframe>
+		<div class="mt-4 border border-border rounded-lg p-2 bg-muted/20">
+			<!-- PDF Iframe -->
+			<iframe src="/CV_Arjit_SDE(5yoe).pdf" class="w-full h-[800px] rounded-md border border-border bg-white"></iframe>
 		</div>
 	</div>
 </BaseLayout>
