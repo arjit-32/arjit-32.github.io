@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="en-GB" class="scroll-smooth"> <head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"><meta content="IE=edge" http-equiv="X-UA-Compatible"><title>Projects • Arjit Sharma Portfolio</title><script async src="https://www.googletagmanager.com/gtag/js?id=G-HS0T8J3NHK"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HS0T8J3NHK');
+</script><!-- <link href="favicon/favicon.ico" rel="icon" sizes="any" />
+<link href="favicon/icon.svg" rel="icon" type="image/svg+xml" />
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" />
+<link href="/manifest.webmanifest" rel="manifest" /> --><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"><link rel="manifest" href="/favicon/site.webmanifest"><!-- <link rel='preload' href='/fonts/Satoshi-Variable.ttf' as='font' type='font/ttf' crossorigin />
+<link
+	rel='preload'
+	href='/fonts/Satoshi-VariableItalic.ttf'
+	as='font'
+	type='font/ttf'
+	crossorigin
+/>
+<link rel='preload' href='/fonts/ClashDisplay-Variable.ttf' as='font' type='font/ttf' crossorigin /> --><link rel="canonical" href="https://arjit-32.github.io/projects/"><meta content="Projects • Arjit Sharma Portfolio" name="title"><meta content="Portfolio of Software Developer Arjit Sharma" name="description"><meta content="SRLEOM" name="author"><meta content="" name="theme-color"><meta content="website" property="og:type"><meta content="Projects" property="og:title"><meta content="Portfolio of Software Developer Arjit Sharma" property="og:description"><meta content="https://arjit-32.github.io/projects/" property="og:url"><meta content="Arjit Sharma Portfolio" property="og:site_name"><meta content="en_GB" property="og:locale"><meta content="https://arjit-32.github.io/social-card.png" property="og:image"><meta content="1200" property="og:image:width"><meta content="630" property="og:image:height"><meta content="summary_large_image" property="twitter:card"><meta content="https://arjit-32.github.io/projects/" property="twitter:url"><meta content="Projects" property="twitter:title"><meta content="Portfolio of Software Developer Arjit Sharma" property="twitter:description"><meta content="https://arjit-32.github.io/social-card.png" property="twitter:image"><link href="/sitemap-index.xml" rel="sitemap"><link href="/rss.xml" rel="alternate" title="Arjit Sharma Portfolio" type="application/rss+xml"><meta content="Astro v4.9.2" name="generator"><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-K51JGWEES3"></script><link rel="stylesheet" href="/_astro/_slug_.BhQYTNcJ.css"><script type="module">window.dataLayer=window.dataLayer||[];function e(){dataLayer.push(arguments)}e("js",new Date);e("config","G-K51JGWEES3");function n(){return localStorage.getItem("theme")}const a=document.getElementById("toggleDarkMode");a?.addEventListener("click",()=>{const t=new CustomEvent("theme-change",{detail:{theme:n()==="light"?"dark":"light"}});document.dispatchEvent(t)});
+</script>
+<script type="module" src="/_astro/page.DFwqf4PB.js"></script></head> <body class="bg-background text-foreground font-sans antialiased"> <script>
+	const lightModePref = window.matchMedia('(prefers-color-scheme: light)')
+
+	// Get user preference from local storage or from browser preference
+	function getUserPref() {
+		const storedTheme = localStorage.getItem('theme') ?? undefined
+		return storedTheme || (lightModePref.matches ? 'light' : 'dark')
+	}
+
+	function setTheme(newTheme) {
+		if (newTheme !== 'light' && newTheme !== 'dark') {
+			return console.log(`Invalid theme value '${newTheme}' received. Expected 'light' or 'dark'.`)
+		}
+
+		localStorage.setItem('theme', newTheme)
+
+		const root = document.documentElement
+
+		// if current dark theme and new theme is dark, return
+		if (newTheme === 'dark' && root.classList.contains('dark')) {
+			return
+		} else if (newTheme === 'light' && !root.classList.contains('dark')) {
+			return
+		}
+
+		root.classList.toggle('dark')
+	}
+
+	// Initial Setup
+	setTheme(getUserPref())
+
+	// View Transitions hook to restore theme
+	document.addEventListener('astro:after-swap', () => setTheme(getUserPref()))
+
+	// Listen for theme-change custom event
+	document.addEventListener('theme-change', (e) => {
+		setTheme(e.detail.theme)
+	})
+
+	// Listen for prefers-color-scheme change
+	lightModePref.addEventListener('change', (e) => setTheme(e.matches ? 'light' : 'dark'))
+</script> <div class="flex min-h-screen flex-col px-4 sm:px-6 md:px-8"> <header class="w-full max-w-6xl mx-auto py-6 px-4 sm:px-6 md:px-8"> <nav class="flex items-center justify-between"> <a class="text-xl font-bold tracking-tight hover:text-primary transition-colors" href="/">
+Arjit Sharma
+</a> <div class="flex items-center gap-x-6"> <a href="/projects/" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"> Projects </a><a href="/articles/" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"> Articles </a><a href="/resume/" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"> Resume </a> <button id="toggleDarkMode" class="group p-2 transition-colors hover:text-primary" aria-label="Toggle Dark Mode"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="hidden dark:block fill-current"> <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"></path> </svg> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="block dark:hidden fill-current"> <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 0 0-1.41 0 .996.996 0 0 0 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 0 0 0-1.41.996.996 0 0 0-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 0 0 0 1.41.996.996 0 0 0 1.41 0l1.06-1.06c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06z"></path> </svg> </button> </div> </nav> </header>  <main class="flex-1 w-full max-w-6xl mx-auto py-10">  <div class="space-y-12"> <div class="space-y-6"> <h1 class="text-3xl font-bold tracking-tight">Projects</h1> <p class="text-muted-foreground max-w-2xl">
+A collection of web applications, tools, and libraries I've built.
+</p> <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-8"> <div class="group flex flex-col h-full bg-card rounded-xl border border-border p-5 transition-all hover:shadow-md hover:border-primary/50 relative">  <a href="https://github.com/arjit-32/highlight-hero" target="_blank" aria-label="View Source on GitHub" class="absolute top-4 right-4 z-20 p-2 bg-background/80 backdrop-blur-sm rounded-full border border-border text-muted-foreground hover:text-primary hover:scale-110 transition-all shadow-sm"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg> </a> <div class="aspect-video w-full rounded-lg bg-muted/30 overflow-hidden mb-4 border border-border/50 flex items-center justify-center relative"> <img src="/images/highlight-hero.jpg" alt="Highlight Hero" class="object-cover w-full h-full"> </div> <h3 class="text-lg font-semibold mb-2 text-foreground"> Highlight Hero </h3> <p class="text-sm text-muted-foreground line-clamp-2 mb-4"> A tool for beautifying code examples in blogs and Ed-tech websites. </p> <div class="flex gap-3 text-sm font-medium mt-auto pt-4 border-t border-border/30"> <a href="https://www.npmjs.com/package/highlight-hero" target="_blank" class="text-primary hover:underline flex items-center gap-1 transition-colors">
+Live Site
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg> </a>  </div> </div><div class="group flex flex-col h-full bg-card rounded-xl border border-border p-5 transition-all hover:shadow-md hover:border-primary/50 relative">  <a href="https://github.com/arjit-32/hindilang" target="_blank" aria-label="View Source on GitHub" class="absolute top-4 right-4 z-20 p-2 bg-background/80 backdrop-blur-sm rounded-full border border-border text-muted-foreground hover:text-primary hover:scale-110 transition-all shadow-sm"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg> </a> <div class="aspect-video w-full rounded-lg bg-muted/30 overflow-hidden mb-4 border border-border/50 flex items-center justify-center relative"> <img src="/images/hindilang.png" alt="Building a Programming Language" class="object-cover w-full h-full"> </div> <h3 class="text-lg font-semibold mb-2 text-foreground"> Building a Programming Language </h3> <p class="text-sm text-muted-foreground line-clamp-2 mb-4"> My first personal portfolio built with Astro and Tailwind CSS. </p> <div class="flex gap-3 text-sm font-medium mt-auto pt-4 border-t border-border/30">  <a href="http://localhost:4321/articles/built-a-compiler/" class="text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors">
+Article
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> </a> </div> </div><div class="group flex flex-col h-full bg-card rounded-xl border border-border p-5 transition-all hover:shadow-md hover:border-primary/50 relative">  <a href="https://github.com/arjit-32/VOSHI" target="_blank" aria-label="View Source on GitHub" class="absolute top-4 right-4 z-20 p-2 bg-background/80 backdrop-blur-sm rounded-full border border-border text-muted-foreground hover:text-primary hover:scale-110 transition-all shadow-sm"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg> </a> <div class="aspect-video w-full rounded-lg bg-muted/30 overflow-hidden mb-4 border border-border/50 flex items-center justify-center relative"> <img src="/images/voshi.png" alt="VOSHI" class="object-cover w-full h-full"> </div> <h3 class="text-lg font-semibold mb-2 text-foreground"> VOSHI </h3> <p class="text-sm text-muted-foreground line-clamp-2 mb-4"> A lightweight, interactive shell with emoji-powered prompts, Git awareness, custom dashboard. </p> <div class="flex gap-3 text-sm font-medium mt-auto pt-4 border-t border-border/30"> <a href="https://arjit-32.github.io/VOSHI/" target="_blank" class="text-primary hover:underline flex items-center gap-1 transition-colors">
+Live Site
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg> </a> <a href="http://localhost:4321/articles/built-a-shell/" class="text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors">
+Article
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> </a> </div> </div> </div> <div class="flex justify-between items-center pt-8"> <div></div> <div></div> </div> </div> </div>  </main> <footer class="mt-20 w-full max-w-3xl mx-auto pb-10 border-t border-border/40 pt-6"> <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground"> <p>&copy; 2026 Arjit Sharma. All rights reserved.</p> <div class="flex items-center gap-x-6"> <a href="https://github.com/arjit-32" target="_blank" rel="noopener noreferrer" class="hover:text-foreground transition-colors">
+GitHub
+</a> <a href="https://www.linkedin.com/in/arjit32/" target="_blank" rel="noopener noreferrer" class="hover:text-foreground transition-colors">
+LinkedIn
+</a> <a href="https://x.com/arjit32" target="_blank" rel="noopener noreferrer" class="hover:text-foreground transition-colors">
+Twitter
+</a> </div> </div> </footer> </div> </body></html>
