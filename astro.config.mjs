@@ -11,11 +11,11 @@ import icon from 'astro-icon'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.me',
+  site: 'https://arjit-32.github.io',
   integrations: [
     expressiveCode(expressiveCodeOptions),
     tailwind({
-      applyBaseStyles: false
+      applyBaseStyles: true // Re-enabling base styles for consistent typography
     }),
     sitemap(),
     mdx(),
@@ -31,13 +31,8 @@ export default defineConfig({
           rel: ['nofollow', 'noopener', 'noreferrer']
         }
       ]
-    ],
-    remarkRehype: {
-      footnoteLabelProperties: {
-        className: ['']
-      }
-    }
+    ]
   },
   prefetch: true,
-  output: 'static'  // Change to static for GitHub Pages
+  output: 'static'
 })

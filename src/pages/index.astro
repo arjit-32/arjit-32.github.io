@@ -1,216 +1,116 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import HeroSection from '@/components/sections/HeroSection.astro';
-import ProjectsSection from '@/components/sections/ProjectsSection.astro';
-import AboutSection from '@/components/sections/AboutSection.astro';
-import ExperienceSection from '@/components/sections/ExperienceSection.astro';
-import TechnologiesSection from '@/components/sections/TechnologiesSection.astro';
-import ThingsICareAboutSection from '@/components/sections/ThingsICareAboutSection.astro';
-import { siteConfig } from '@/site-config';
-
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import ProjectCard from '@/components/ProjectCard.astro'
+import { getCollection } from 'astro:content'
+import { siteConfig } from '@/site-config'
 import { Image } from 'astro:assets'
-import astro from '../assets/arjit.webp'
+import arjitImage from '@/assets/arjit.webp'
+import arjitRealImage from '@/assets/arjit-real.jfif'
 
-const DESIGN = [
-	{
-		name: 'Figma',
-		description: 'Design Tool',
-		href: 'https://www.figma.com/',
-		iconPath: 'figma',
-		iconBgColour: '#000001'
-	}
-]
-const LANGUAGES = [
-	{
-		name: 'java',
-		description: '',
-		href: '',
-		iconPath: 'java',
-		iconBgColour: '#000001'
-	},
-	{
-		name: 'javascript',
-		description: '',
-		href: '',
-		iconPath: 'js',
-		iconBgColour: '#000001'
-	},
-]
-const OTHERS = [
-	{
-		name: 'NPM',
-		description: 'Package Manager',
-		href: '',
-		iconPath: 'npm',
-		iconBgColour: '#000001'
-	},
-	{
-		name: 'VS Code',
-		description: 'Code Editor',
-		href: '',
-		iconPath: 'vscode',
-		iconBgColour: '#06A67F'
-	},
-	{
-		name: 'Github',
-		description: 'Version Control',
-		href: '',
-		iconPath: 'github',
-		iconBgColour: '#06A67F'
-	},
-	{
-		name: 'ChatGPT',
-		description: 'AI tool',
-		href: '',
-		iconPath: 'chatgpt',
-		iconBgColour: '#06A67F'
-	}
-]
-const DEVELOPMENT = [
-	{
-		name: 'HTML',
-		description: '',
-		href: '/',
-		iconPath: 'html',
-		iconBgColour: '#2C2C32'
-	},
-	{
-		name: 'CSS',
-		description: '',
-		href: '/',
-		iconPath: 'css',
-		iconBgColour: '#06A67F'
-	},
-	{
-		name: 'Bootstrap',
-		description: '',
-		href: '/',
-		iconPath: 'bootstrap',
-		iconBgColour: '#06A67F'
-	},
-	{
-		name: 'Tailwind',
-		description: '',
-		href: '/',
-		iconPath: 'tailwind',
-		iconBgColour: '#06A67F'
-	},
-	{
-		name: 'React JS',
-		description: '',
-		href: '/',
-		iconPath: 'react',
-		iconBgColour: '#06A67F'
-	},
-	{
-		name: 'Node JS',
-		description: '',
-		href: '/',
-		iconPath: 'node',
-		iconBgColour: '#06A67F'
-	},
-	{
-		name: 'Mongo DB',
-		description: '',
-		href: '/',
-		iconPath: 'mongo',
-		iconBgColour: '#06A67F'
-	},
-	{
-		name: 'MySQL',
-		description: '',
-		href: '/',
-		iconPath: 'mysql',
-		iconBgColour: '#06A67F'
-	},
-	{
-		name: 'PHP',
-		description: '',
-		href: '/',
-		iconPath: 'php',
-		iconBgColour: '#06A67F'
-	},
-	{
-		name: 'AWS',
-		description: '',
-		href: '/',
-		iconPath: 'aws',
-		iconBgColour: '#06A67F'
-	}
-]
+// Filter out hands-on projects and sort by date
+const projects = (await getCollection('projects'))
+  .sort((a, b) => (b.data.publishDate?.valueOf() || 0) - (a.data.publishDate?.valueOf() || 0))
+  .slice(0, 3)
+
+const articles = (await getCollection('articles'))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .slice(0, 3)
 ---
 
-<BaseLayout title={siteConfig.title} description={siteConfig.description}>
-	<div class="flex flex-col min-h-screen">
-		<!-- Hero Section with 3D elements -->
-		<HeroSection />
-		
-		<!-- Projects Gallery Section -->
-		<ProjectsSection />
-		
-		<!-- About Me Section -->
-		<AboutSection />
-		
-		<!-- Experience Timeline Section -->
-		<ExperienceSection />
-		
-		<!-- Technologies Section -->
-		<TechnologiesSection />
-		
-		<!-- Things I Care About Section (Optional) -->
-		<ThingsICareAboutSection />
-	</div>
+<BaseLayout>
+  <section class="py-10 sm:py-20 border-b border-border/40">
+    <div class="flex flex-col-reverse sm:flex-row items-center gap-8 sm:gap-12">
+      <div class="flex flex-col gap-y-6 sm:w-2/3">
+        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl text-foreground">
+          Henlo People.
+        </h1>
+        <p class="max-w-prose text-lg text-muted-foreground leading-relaxed">
+        I'm Arjit, a Software Engineer with experience in building web applications currently working at Canalys (now acquired InformaTechTarget). I'm always learning, and <a href="https://csprimer.in" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline transition-colors">csprimer.in</a> became my way of sharing what I learned along the way.  
+        </p>    
+
+        <p class="max-w-prose text-lg text-muted-foreground leading-relaxed mt-4">Outside of work, I enjoy exploring new ideas, making videos, writing, experimenting with creative projects, and running.  </p>
+
+        <div class="flex gap-6 mt-2 items-center">
+            <a href="https://www.linkedin.com/in/arjit32/" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary transition-colors font-medium">
+                LinkedIn
+            </a>
+            <a href="https://x.com/arjit32" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary transition-colors font-medium">
+                X (Twitter)
+            </a>
+            <a href="mailto:arjitsharma50@gmail.com" class="text-muted-foreground hover:text-primary transition-colors font-medium">
+                Email
+            </a>
+        </div>
+      </div>
+      
+      <div class="sm:w-1/3 flex justify-center sm:justify-end">
+          <div class="group relative w-[280px] h-[280px] rounded-2xl overflow-hidden shadow-sm rotate-2 hover:rotate-0 transition-all duration-500">
+             <Image 
+                src={arjitImage} 
+                alt="Arjit Sharma Anime Avatar" 
+                width={280} 
+                height={280} 
+                class="absolute inset-0 object-cover w-full h-full transition-opacity duration-500 group-hover:opacity-0"
+              />
+              <Image 
+                src={arjitRealImage} 
+                alt="Arjit Sharma Real" 
+                width={280} 
+                height={280} 
+                class="absolute inset-0 object-cover w-full h-full opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+              />
+          </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  {projects.length > 0 && (
+    <section class="py-16 border-b border-border/40">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-semibold tracking-tight">Selected Projects</h2>
+        <a href="/projects/" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+          View all &rarr;
+        </a>
+      </div>
+      
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {projects.map((project) => (
+          <ProjectCard project={project} />
+        ))}
+      </div>
+    </section>
+  )}
+
+  {articles.length > 0 && (
+    <section class="py-16">
+       <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-semibold tracking-tight">Writing</h2>
+        <a href="/articles/" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+          View all &rarr;
+        </a>
+      </div>
+      
+      <ul class="space-y-6">
+        {articles.map((article) => (
+          <li class="group">
+            <a href={`/articles/${article.slug}/`} class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 sm:gap-4 p-4 -mx-4 rounded-lg hover:bg-muted/40 transition-colors">
+              <span class="text-lg font-medium group-hover:text-primary transition-colors">
+                {article.data.title}
+              </span>
+              <span class="text-sm text-muted-foreground shrink-0 tabular-nums">
+                {article.data.publishDate.toLocaleDateString(siteConfig.date.locale, {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric"
+                })}
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
 </BaseLayout>
 
-<style>
-	/* Custom animations and styling for the homepage */
-	:root {
-		scroll-behavior: smooth;
-	}
-	
-	/* Section transitions and animations */
-	main section {
-		opacity: 0;
-		transform: translateY(20px);
-		transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-	}
-	
-	main section.visible {
-		opacity: 1;
-		transform: translateY(0);
-	}
-</style>
-
-<script>
-	// Import GSAP for animations
-	import { gsap } from 'gsap';
-	import { ScrollTrigger } from 'gsap/ScrollTrigger';
-	
-	// Register the ScrollTrigger plugin
-	gsap.registerPlugin(ScrollTrigger);
-	
-	document.addEventListener('DOMContentLoaded', () => {
-		// Apply animations to sections when they come into view
-		const sections = document.querySelectorAll('section');
-		
-		sections.forEach((section) => {
-			gsap.fromTo(
-				section,
-				{ 
-					opacity: 0,
-					y: 50
-				},
-				{
-					opacity: 1,
-					y: 0,
-					duration: 0.8,
-					scrollTrigger: {
-						trigger: section,
-						start: 'top 80%',
-						toggleActions: 'play none none none'
-					}
-				}
-			);
-		});
-	});
-</script>

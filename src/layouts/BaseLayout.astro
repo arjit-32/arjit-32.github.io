@@ -22,97 +22,27 @@ const {
 
 <html lang={siteConfig.lang} class="scroll-smooth">
 	<head>
-		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+		<BaseHead articleDate={articleDate?.toISOString()} description={description} ogImage={ogImage} title={title} />
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-K51JGWEES3"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-K51JGWEES3');
+		</script>
 	</head>
 
-	<body class="flex justify-center bg-background font-sans">
+	<body class="bg-background text-foreground font-sans antialiased">
 		<ThemeProvider />
-		<div class="flex min-h-screen w-full flex-col">
+		<div class="flex min-h-screen flex-col px-4 sm:px-6 md:px-8">
 			<Header />
-			<main class="flex-1 w-full max-w-7xl mx-auto">
+			<main class="flex-1 w-full max-w-6xl mx-auto py-10">
 				<slot />
 			</main>
 			<Footer />
 		</div>
-		
-		<!-- Cursor follower effect -->
-		<div id="cursor-follower" class="fixed w-8 h-8 rounded-full pointer-events-none opacity-0 z-50 transition-opacity duration-300 bg-primary/20 blur-sm"></div>
-		
-		<script>
-			// Cursor follower effect
-			document.addEventListener('DOMContentLoaded', () => {
-				const follower = document.getElementById('cursor-follower');
-				if (!follower) return;
-				
-				// Show follower when mouse enters the document
-				document.addEventListener('mouseenter', () => {
-					follower.style.opacity = '1';
-				});
-				
-				// Hide follower when mouse leaves the document
-				document.addEventListener('mouseleave', () => {
-					follower.style.opacity = '0';
-				});
-				
-				// Update follower position on mouse move
-				document.addEventListener('mousemove', (e) => {
-					const { clientX, clientY } = e;
-					
-					// Calculate position to center the follower on the cursor
-					const x = clientX - follower.offsetWidth / 2;
-					const y = clientY - follower.offsetHeight / 2;
-					
-					// Apply position with smooth transition
-					follower.style.transform = `translate(${x}px, ${y}px)`;
-				});
-				
-				// Scale effect on interactive elements
-				const interactiveElements = document.querySelectorAll('a, button, .project-card, .tech-card, .care-card');
-				
-				interactiveElements.forEach(element => {
-					element.addEventListener('mouseenter', () => {
-						follower.style.transform += ' scale(2.5)';
-						follower.style.opacity = '0.8';
-					});
-					
-					element.addEventListener('mouseleave', () => {
-						follower.style.transform = follower.style.transform.replace(' scale(2.5)', '');
-						follower.style.opacity = '1';
-					});
-				});
-			});
-		</script>
 	</body>
 </html>
 
-<style is:global>
-	:root {
-		--font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-	}
-	
-	html {
-		font-family: var(--font-sans);
-	}
-	
-	/* Smooth scrolling */
-	html {
-		scroll-behavior: smooth;
-	}
-	
-	/* Hide scrollbar but keep functionality */
-	body::-webkit-scrollbar {
-		width: 8px;
-	}
-	
-	body::-webkit-scrollbar-track {
-		background: transparent;
-	}
-	
-	body::-webkit-scrollbar-thumb {
-		background-color: rgba(156, 163, 175, 0.5);
-		border-radius: 20px;
-	}
-</style>

@@ -1,0 +1,39 @@
+---
+import { Icon } from 'astro-icon/components'
+
+const skills = [
+  { name: 'HTML5', icon: 'simple-icons:html5' },
+  { name: 'CSS3', icon: 'simple-icons:css3' },
+  { name: 'Tailwind CSS', icon: 'simple-icons:tailwindcss' },
+  { name: 'JavaScript', icon: 'simple-icons:javascript' },
+  { name: 'React', icon: 'simple-icons:react' },
+  { name: 'Node.js', icon: 'simple-icons:nodedotjs' },
+  { name: 'Express.js', icon: 'simple-icons:express' },
+  { name: 'MySQL', icon: 'simple-icons:mysql' },
+  { name: 'MongoDB', icon: 'simple-icons:mongodb' },
+  { name: 'Docker', icon: 'simple-icons:docker' },
+  { name: 'Git', icon: 'simple-icons:git' },
+  { name: 'Python', icon: 'simple-icons:python' },
+  { name: 'PostgreSQL', icon: 'simple-icons:postgresql' },
+  { name: 'TypeScript', icon: 'simple-icons:typescript' },
+]
+---
+
+<section class="border-y border-border/40 bg-background/50 backdrop-blur-sm">
+  <div class="py-10 px-4 sm:px-6 md:py-12 max-w-3xl mx-auto">
+    <h2 class="text-2xl font-bold tracking-tight mb-8">Technologies</h2>
+    
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6">
+      {skills.map((skill) => (
+        <div class="flex flex-col items-center justify-center p-4 rounded-lg border border-border/40 bg-card hover:bg-muted/50 hover:border-primary/20 transition-all group duration-300">
+          <div class="p-3 rounded-full bg-muted/50 text-muted-foreground group-hover:text-primary group-hover:bg-primary/10 transition-colors mb-3">
+             <Icon name={skill.icon} class="w-6 h-6" />
+          </div>
+          <span class="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">
+            {skill.name}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

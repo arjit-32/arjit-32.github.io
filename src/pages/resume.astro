@@ -1,0 +1,31 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+---
+
+<BaseLayout title="Resume">
+	<div class="space-y-6">
+		<h1 class="text-3xl font-bold tracking-tight">Resume</h1>
+		<p class="text-muted-foreground">Download or view my resume.</p>
+		
+		<div class="mt-8 flex gap-4">
+			<a 
+				href="/CV-ArjitSharma-SDE.pdf" 
+				target="_blank" 
+				class="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90"
+			>
+				Download PDF
+			</a>
+			<!-- <a 
+				href="/CV-ArjitSharma-SDE.pdf" 
+				class="inline-flex items-center justify-center rounded-md border border-input bg-transparent px-6 py-3 text-sm font-medium shadow-sm hover:bg-accent hover:text-accent-foreground"
+			>
+				View in Browser
+			</a> -->
+		</div>
+		
+		<div class="mt-10 border border-border rounded-lg p-4 bg-muted/20">
+			<p class="text-sm text-muted-foreground mb-4">Preview (First page only, download for full version):</p>
+			<iframe src="/CV-ArjitSharma-SDE.pdf" class="w-full h-[600px] rounded-md border border-border"></iframe>
+		</div>
+	</div>
+</BaseLayout>

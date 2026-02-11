@@ -1,0 +1,49 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import ProjectCard from '@/components/ProjectCard.astro'
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths({ paginate }) {
+  const allProjects = (await getCollection('projects'))
+    .sort((a, b) => (b.data.publishDate?.valueOf() || 0) - (a.data.publishDate?.valueOf() || 0))
+
+  return paginate(allProjects, { 
+    pageSize: 10
+  });
+}
+
+const { page } = Astro.props
+---
+
+<BaseLayout title="Projects">
+  <div class="space-y-12">
+    <div class="space-y-6">
+        <h1 class="text-3xl font-bold tracking-tight">Projects</h1>
+        <p class="text-muted-foreground max-w-2xl">
+          A collection of web applications, tools, and libraries I've built.
+        </p>
+        
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-8">
+          {page.data.map((project) => (
+            <ProjectCard project={project} />
+          ))}
+        </div>
+
+        <div class="flex justify-between items-center pt-8">
+            {page.url.prev ? (
+                <a href={page.url.prev} class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                    &larr; Previous
+                </a>
+            ) : <div></div>}
+            
+            {page.url.next ? (
+                <a href={page.url.next} class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                    Next &rarr;
+                </a>
+            ) : <div></div>}
+        </div>
+    </div>
+
+
+  </div>
+</BaseLayout>
