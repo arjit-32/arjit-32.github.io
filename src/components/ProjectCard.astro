@@ -23,9 +23,9 @@ const { project } = Astro.props
         </a>
     )}
 
-  <div class="aspect-video w-full rounded-lg bg-muted/30 overflow-hidden mb-4 border border-border/50 flex items-center justify-center relative">
+  <div class="aspect-video w-full rounded-lg bg-muted/20 overflow-hidden mb-4 border border-border/50 flex items-center justify-center relative p-4">
      {project.data.heroImage ? (
-         <img src={project.data.heroImage} alt={project.data.title} class="object-cover w-full h-full" />
+         <img src={project.data.heroImage} alt={project.data.title} class="object-contain w-full h-full drop-shadow-sm" />
      ) : (
          <span class="text-4xl opacity-10">🚀</span>
      )}

@@ -1,6 +1,6 @@
 ---
 title: "VOSHI"
-description: "A lightweight, interactive shell with emoji-powered prompts, Git awareness, custom dashboard."
+description: "My own shell"
 publishDate: 2024-03-01
 tags: [""]
 link: "https://arjit-32.github.io/VOSHI/"

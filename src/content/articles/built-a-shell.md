@@ -3,6 +3,7 @@ title: "Building your own Shell"
 description: "Learn about operating system concept by building your own shell"
 publishDate: 2025-04-09
 tags: ["Project"]
+canonicalURL: "https://www.csprimer.in/articles/build-your-own-shell"
 ---
 
 I always wanted to get my hands dirty with a operating systems project, so I *finally* did and set out to build my own shell. It was perfect choice: not too complex to scare soy-dev like me, yet rich enough to explore funamental concept of running a program via command line.

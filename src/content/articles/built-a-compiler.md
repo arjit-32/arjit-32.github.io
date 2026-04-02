@@ -3,6 +3,7 @@ title: "Building you own Programming Lanuage"
 description: "How is a compiler working under the hood, learn by building your own programming language"
 publishDate: 2024-10-01
 tags: ["Project"]
+canonicalURL: "https://www.csprimer.in/articles/built-a-compiler"
 ---
 
 Programming languages are fascinating. But have you ever wondered **how they work under the hood?** As an academic exercise, I set out to build my own programming language [hindilang](https://github.com/arjit-32/hindilang), a Hindi inspired scripting language that transpiles to JavaScript!

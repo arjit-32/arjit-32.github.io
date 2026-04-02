@@ -1,6 +1,6 @@
 ---
 title: "Hindilang"
-description: "Hindi-inspired scripting language"
+description: "My own programming language"
 publishDate: 2024-03-01
 tags: [""]
 github: "https://github.com/arjit-32/hindilang"

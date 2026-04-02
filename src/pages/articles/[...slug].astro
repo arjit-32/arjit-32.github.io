@@ -15,7 +15,7 @@ const { entry } = Astro.props
 const { Content } = await entry.render()
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.description} articleDate={entry.data.publishDate}>
+<BaseLayout title={entry.data.title} description={entry.data.description} articleDate={entry.data.publishDate} canonicalURL={entry.data.canonicalURL} >
 	<div class="mb-8 border-b border-border/40 pb-8">
 		<a href="/articles/" class="text-sm text-muted-foreground hover:text-primary transition-colors mb-4 inline-block">&larr; Back to articles</a>
 		<h1 class="text-3xl font-bold tracking-tight mb-2">{entry.data.title}</h1>
@@ -34,6 +34,11 @@ const { Content } = await entry.render()
 				))}
 			</div>
 		</div>
+		{entry.data.canonicalURL && (
+			<p class="mt-4 text-sm font-medium italic">
+				Originally posted on <a href={entry.data.canonicalURL} target="_blank" rel="noopener noreferrer" class="text-primary hover:underline transition-colors">{new URL(entry.data.canonicalURL).hostname}</a>
+			</p>
+		)}
 	</div>
 
 	<article class="prose dark:prose-invert prose-stone max-w-none">
