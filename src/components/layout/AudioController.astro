@@ -1,0 +1,132 @@
+---
+---
+
+<div id="audio-container" hidden></div>
+
+<!-- Easter Egg: Keyboard Shortcut Menu -->
+<dialog id="shortcuts-dialog" class="bg-background text-foreground border border-border/60 rounded-lg p-6 shadow-2xl backdrop:bg-black/80 backdrop:backdrop-blur-sm max-w-sm w-full outline-none focus-visible:ring-2 ring-primary">
+  <div class="space-y-4">
+    <div class="flex items-center justify-between border-b border-border/40 pb-2">
+      <h3 class="text-sm font-bold uppercase tracking-widest text-muted-foreground">Shortcuts</h3>
+      <kbd class="text-[10px] px-1.5 py-0.5 rounded border border-border bg-muted">ESC</kbd>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="flex items-center justify-between">
+        <span class="text-xs">Home</span>
+        <kbd class="text-[10px] px-1.5 py-0.5 rounded border border-border bg-muted">G H</kbd>
+      </div>
+      <div class="flex items-center justify-between">
+        <span class="text-xs">Projects</span>
+        <kbd class="text-[10px] px-1.5 py-0.5 rounded border border-border bg-muted">G P</kbd>
+      </div>
+      <div class="flex items-center justify-between">
+        <span class="text-xs">Writing</span>
+        <kbd class="text-[10px] px-1.5 py-0.5 rounded border border-border bg-muted">G W</kbd>
+      </div>
+      <div class="flex items-center justify-between">
+        <span class="text-xs">Toggle Theme</span>
+        <kbd class="text-[10px] px-1.5 py-0.5 rounded border border-border bg-muted">T</kbd>
+      </div>
+    </div>
+    <div class="pt-2 text-[10px] text-center text-muted-foreground italic">
+      "Product-feel portfolio v1.0.0"
+    </div>
+  </div>
+</dialog>
+
+<script>
+  // --- Audio Logic ---
+  const clickSound = new Audio('https://www.soundjay.com/buttons/button-50.mp3'); 
+  clickSound.volume = 0.1;
+  clickSound.preload = 'auto';
+
+  function playClick() {
+    const sound = clickSound.cloneNode() as HTMLAudioElement;
+    sound.volume = 0.1;
+    sound.play().catch(() => {});
+  }
+
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (target.closest('a, button, [role="button"]')) {
+      playClick();
+    }
+  });
+
+  // --- Easter Eggs ---
+  
+  // 1. ASCII Art Console Log
+  console.log(
+    `%c  
+     █████╗ ██████╗      ██╗██╗████████╗
+    ██╔══██╗██╔══██╗     ██║██║╚══██╔══╝
+    ███████║██████╔╝     ██║██║   ██║   
+    ██╔══██║██╔══██╗██   ██║██║   ██║   
+    ██║  ██║██║  ██║╚█████╔╝██║   ██║   
+    ╚═╝  ╚═╝╚═╝  ╚═╝ ╚════╝ ╚═╝   ╚═╝   
+    %cSoftware Engineer | https://arjit32.dev/`,
+    "color: #7c3aed; font-weight: bold; font-family: monospace;",
+    "color: #6b7280; font-family: sans-serif;"
+  );
+
+  // 2. Keyboard Shortcuts
+  const dialog = document.getElementById('shortcuts-dialog') as HTMLDialogElement;
+  let keyBuffer = '';
+
+  document.addEventListener('keydown', (e) => {
+    // Open shortcuts menu with '?'
+    if (e.key === '?' && !['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName || '')) {
+      dialog.showModal();
+    }
+
+    // Modal behavior for 'ESC' handled automatically by <dialog>
+
+    // Experimental: G+X navigation
+    if (!['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName || '')) {
+      const char = e.key.toLowerCase();
+      
+      if (char === 'g') {
+          keyBuffer = 'g';
+          setTimeout(() => keyBuffer = '', 1000);
+          return;
+      }
+
+      if (keyBuffer === 'g') {
+        if (char === 'p') window.location.href = '/projects/';
+        if (char === 'w') window.location.href = '/articles/';
+        if (char === 'h') window.location.href = '/';
+        keyBuffer = '';
+      }
+
+      // Theme toggle shortcut 'T'
+      if (char === 't' && keyBuffer === '') {
+        const btn = document.getElementById('toggleDarkMode');
+        btn?.click();
+      }
+    }
+  });
+
+  // Close dialog on backdrop click
+  dialog?.addEventListener('click', (e) => {
+    const rect = dialog.getBoundingClientRect();
+    if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) {
+        dialog.close();
+    }
+  });
+</script>
+
+<style is:global>
+  a, button {
+    transition: transform 0.1s ease, filter 0.2s ease;
+  }
+
+  a:active, button:active {
+    transform: scale(0.97);
+  }
+
+  /* Keyboard shortcut hint styling */
+  kbd {
+    box-shadow: 0 1px 0 #000, 0 1.5px 0 #333;
+  }
+</style>
+

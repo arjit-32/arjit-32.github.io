@@ -1,0 +1,48 @@
+---
+interface Props {
+  tags: string[];
+  allTagsCount: Record<string, number>;
+  activeTag?: string;
+}
+
+const { tags, allTagsCount, activeTag = 'all' } = Astro.props;
+
+const sortedTags = tags.sort((a, b) => a.localeCompare(b));
+---
+
+<div class="flex flex-wrap gap-2 py-4 border-b border-border/20 mb-8 overflow-x-auto no-scrollbar">
+  <a
+    href="/articles/"
+    class:list={[
+      "px-3 py-1.5 text-xs font-mono uppercase tracking-widest border transition-all duration-200 whitespace-nowrap active:scale-95",
+      activeTag === 'all' 
+        ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20" 
+        : "bg-muted/30 border-border/40 text-muted-foreground hover:border-primary/50 hover:text-primary"
+    ]}
+  >
+    All
+  </a>
+  {sortedTags.map((tag) => (
+    <a
+      href={`/articles/tags/${tag.toLowerCase()}/`}
+      class:list={[
+        "px-3 py-1.5 text-xs font-mono uppercase tracking-widest border transition-all duration-200 whitespace-nowrap active:scale-95",
+        activeTag.toLowerCase() === tag.toLowerCase()
+          ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20" 
+          : "bg-muted/30 border-border/40 text-muted-foreground hover:border-primary/50 hover:text-primary"
+      ]}
+    >
+      {tag} <span class="opacity-50 ml-1">({allTagsCount[tag] || 0})</span>
+    </a>
+  ))}
+</div>
+
+<style>
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>

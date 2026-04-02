@@ -1,0 +1,99 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { getCollection } from 'astro:content'
+import { siteConfig } from '@/site-config'
+import TagFilters from '@/components/layout/TagFilters.astro'
+
+export async function getStaticPaths({ paginate }) {
+  const allArticles = await getCollection('articles');
+  
+  // Extract unique tags and count their occurrences
+  const allTagsCount: Record<string, number> = {};
+  allArticles.forEach(article => {
+    article.data.tags?.forEach(tag => {
+      allTagsCount[tag] = (allTagsCount[tag] || 0) + 1;
+    });
+  });
+
+  const uniqueTags = Object.keys(allTagsCount);
+  const sortedArticles = allArticles.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+
+  return paginate(sortedArticles, { 
+    props: { allTagsCount, uniqueTags },
+    pageSize: 10
+  });
+}
+
+const { page, allTagsCount, uniqueTags } = Astro.props;
+---
+
+
+<BaseLayout title="Articles">
+  <div class="space-y-10">
+    <div class="flex flex-col gap-y-2">
+      <h1 class="text-3xl font-bold tracking-tight">Writing</h1>
+      <p class="text-muted-foreground text-lg">A log of ideas, engineering notes, and experiments.</p>
+    </div>
+
+    <TagFilters tags={uniqueTags} allTagsCount={allTagsCount} activeTag="all" />
+    
+    <div class="flex flex-col border-y border-border/40 divide-y divide-border/40 overflow-hidden">
+
+      {page.data.map((article) => (
+        <a 
+          href={`/articles/${article.slug}/`} 
+          class="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-6 px-2 -mx-2 hover:bg-muted/30 transition-all duration-200 cursor-pointer"
+        >
+          <div class="flex flex-col gap-1">
+            <h2 class="text-lg font-medium group-hover:text-primary transition-colors">
+              {article.data.title}
+            </h2>
+            <p class="text-sm text-muted-foreground line-clamp-1 max-w-xl">
+              {article.data.description}
+            </p>
+          </div>
+          
+          <div class="flex items-center gap-4 shrink-0">
+             {article.data.tags && article.data.tags.length > 0 && (
+               <span class="hidden sm:inline-block px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider border border-border/60 rounded bg-muted/20 text-muted-foreground">
+                 {article.data.tags[0]}
+               </span>
+             )}
+             <time datetime={article.data.publishDate.toISOString()} class="text-sm font-mono text-muted-foreground tabular-nums">
+              {article.data.publishDate.toLocaleDateString(siteConfig.date.locale, {
+                year: "numeric",
+                month: "short",
+                day: "2-digit"
+              }).toUpperCase()}
+            </time>
+          </div>
+        </a>
+      ))}
+    </div>
+    
+    {page.data.length === 0 && (
+      <p class="text-center py-20 text-muted-foreground italic">No logs found in this directory.</p>
+    )}
+
+    {/* Pagination Navigation */}
+    {(page.url.prev || page.url.next) && (
+      <nav class="flex items-center justify-between pt-4">
+        {page.url.prev ? (
+          <a href={page.url.prev} class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            &larr; Previous
+          </a>
+        ) : <div />}
+        
+        <span class="text-xs text-muted-foreground font-mono uppercase tracking-widest">
+          Page {page.currentPage} / {page.lastPage}
+        </span>
+
+        {page.url.next ? (
+          <a href={page.url.next} class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            Next &rarr;
+          </a>
+        ) : <div />}
+      </nav>
+    )}
+  </div>
+</BaseLayout>
